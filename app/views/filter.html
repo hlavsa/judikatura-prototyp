@@ -31,7 +31,7 @@
     </div>
 
     <div class="hmcts-filter__header-action">
-
+      <button class="hmcts-filter__close" type="button">Zavrít</button>
     </div>
 
   </div>
@@ -52,21 +52,21 @@
 
       </div>
 
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Type</h3>
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Kategorie rozhodnutí</h3>
 
       <ul class="hmcts-filter-tags">
 
-        <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Divorce</a></li>
+        <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Odstranit tento filtr</span> A</a></li>
 
-        <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Financial remedy</a></li>
+        <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Odstranit tento filtr</span> B</a></li>
 
       </ul>
 
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Status</h3>
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Úsek soudu</h3>
 
       <ul class="hmcts-filter-tags">
 
-        <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Application drafted</a></li>
+        <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Odstranit tento filtr</span> Civilní úsek</a></li>
 
       </ul>
 
@@ -75,12 +75,12 @@
     <div class="hmcts-filter__options">
 
       <button type="submit" class="govuk-button">
-        Apply filters
+        Použít filtry
       </button>
 
       <div class="govuk-form-group">
         <label class="govuk-label govuk-label--m" for="keywords">
-          Keywords
+          Věta
         </label>
 
         <input class="govuk-input" id="keywords" name="keywords" type="text">
@@ -92,7 +92,7 @@
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 
-            Type
+            Kategorie rozhodnutí
 
           </legend>
 
@@ -101,21 +101,21 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="type-1" name="type" type="checkbox" value="1" checked>
               <label class="govuk-label govuk-checkboxes__label" for="type-1">
-                Divorce (18)
+                A (18)
               </label>
             </div>
 
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
               <label class="govuk-label govuk-checkboxes__label" for="type-2">
-                Financial Remedy (5)
+                B (5)
               </label>
             </div>
 
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
               <label class="govuk-label govuk-checkboxes__label" for="type-3">
-                Probate (2)
+                C (2)
               </label>
             </div>
 
@@ -130,30 +130,23 @@
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 
-            Status
+            Úsek soudu
 
           </legend>
 
-          <div class="govuk-checkboxes govuk-checkboxes--small">
+          <div class="govuk-radios govuk-radios--small">
 
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="status-1" name="status" type="checkbox" value="1" checked>
-              <label class="govuk-label govuk-checkboxes__label" for="status-1">
-                Application drafted
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="status-1" name="status" type="radio" value="1" checked>
+              <label class="govuk-label govuk-radios__label" for="status-1">
+                Civilní úsek
               </label>
             </div>
 
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
-              <label class="govuk-label govuk-checkboxes__label" for="status-2">
-                Awaiting payment
-              </label>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="magistrate">
-              <label class="govuk-label govuk-checkboxes__label" for="status-3">
-                Petition paid
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="status-2" name="status" type="radio" value="2">
+              <label class="govuk-label govuk-radios__label" for="status-2">
+                Trestní úsek
               </label>
             </div>
 
@@ -173,14 +166,11 @@
 <div class="hmcts-filter-layout__content">
 
 <div class="hmcts-action-bar">
+  <div class="hmcts-action-bar__filter"><button class="govuk-button hmcts-button--secondary btn-apply-filter" type="button" aria-haspopup="true" aria-expanded="false">Zobrazit filtr</button></div>
 
   <div class="hmcts-menu">
     <div class="hmcts-menu__wrapper">
-
-      <button type="submit" class="govuk-button hmcts-menu__item hmcts-button--secondary btn-apply-filter">
-        Zobrazit filtr
-      </button>
-
+      <h2 class="govuk-heading-m">3 000 výsledků</h2>
     </div>
   </div>
 
