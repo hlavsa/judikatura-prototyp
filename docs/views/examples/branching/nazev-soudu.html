@@ -1,0 +1,39 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  justice - judikatura prototyp
+{% endblock %}
+
+{% block beforeContent %}
+  {% from "back-link/macro.njk" import govukBackLink %}
+
+  {{ govukBackLink({
+    "href": "/"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Hledat podle názvu nebo adresy soudu
+    </h1>
+
+    <fieldset class="govuk-fieldset govuk-form-group">
+      <label for="address" class="govuk-label govuk-form-block">
+        <div class="govuk-hint">Napište jedno z následujících</div>
+        <ul class="govuk-hint">
+          <li>název soudu</li>
+          <li>název ulice</li>
+          <li>název mesta</li>
+        </ul>
+        <input id="address" class="govuk-input" type="text" name="q" autofocus="">
+      </label>
+    </fieldset>
+
+  </div>
+</div>
+
+{% endblock %}

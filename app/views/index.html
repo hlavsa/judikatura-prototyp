@@ -1,0 +1,59 @@
+
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  justice - judikatura prototyp
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Vyhledat rozhodnutí nejvyšších a krajských soudů
+        <span class="govuk-caption-xl">Prototyp</span>
+      </h1>
+      </h1>
+
+      <h2 class="govuk-heading-m">Vyberte verzi prototypu</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/docs/examples/branching/index">v1 - radio s podmínkou</a>
+        </li>
+        <li>
+          <a href="/filter">
+            v2 - plain seznam s filtrováním
+          </a>
+        </li>
+      </ul>
+
+      <hr class="govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+
+      <h2 class="govuk-heading-m ">
+        Při použití custom css je přesto nutné dodržet následující:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            veškeré interaktvní prvky mají jiné chování při stavu :hover a :focus
+          </li>
+          <li>
+            tvorba stránky se řídí přístupem progressive enhacement, stránky jsou pochopitelné a použitelné bez CSS a JS
+          </li>
+          <li>
+            existují CSS zajišťující responzivní design, fallback pro prohlížeče <=IE9 a CSS pro print
+          </li>
+          <li>
+            stránka splňuje <a href="http://govcz-a11y.herokuapp.com/pages/tools-checklist">a11y checklist</a>
+          </li>
+          <li>
+            stránka je otestována minimálně <a href="https://www.deque.com/axe/">aXe enginem</a> (nebo obdobným nástrojem) a je bez kritického nálezu 
+          </li>
+          <li>
+            stránka je použitelná při aplikaci Módu Vysokého kontrastu na Windows
+          </li>
+        </ul>
+      </h2>
+    </div>
+</div>
+
+{% endblock %}

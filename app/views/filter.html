@@ -1,0 +1,379 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  justice - judikatura prototyp
+{% endblock %}
+
+{% block beforeContent %}
+  {% from "back-link/macro.njk" import govukBackLink %}
+
+  {{ govukBackLink({
+    "href": "/"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-xl">
+  Vyhledat rozhodnutí nejvyšších a krajských soudů v2
+</h1>
+
+<div class="hmcts-filter-layout">
+
+<div class="hmcts-filter-layout__filter">
+
+<div class="hmcts-filter hmcts-hidden" id="hmcts-filter" tabindex="-1">
+
+  <div class="hmcts-filter__header">
+
+    <div class="hmcts-filter__header-title">
+      <h2 class="govuk-heading-m">Filtr</h2>
+    </div>
+
+    <div class="hmcts-filter__header-action">
+
+    </div>
+
+  </div>
+
+  <div class="hmcts-filter__content">
+
+    <div class="hmcts-filter__selected">
+
+      <div class="hmcts-filter__selected-heading">
+
+        <div class="hmcts-filter__heading-title">
+          <h2 class="govuk-heading-m">Vybrané filtry</h2>
+        </div>
+
+        <div class="hmcts-filter__heading-action">
+          <p><a class="govuk-link govuk-link--no-visited-state" href="">Vymazat filtry</a></p>
+        </div>
+
+      </div>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Type</h3>
+
+      <ul class="hmcts-filter-tags">
+
+        <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Divorce</a></li>
+
+        <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Financial remedy</a></li>
+
+      </ul>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Status</h3>
+
+      <ul class="hmcts-filter-tags">
+
+        <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Application drafted</a></li>
+
+      </ul>
+
+    </div>
+
+    <div class="hmcts-filter__options">
+
+      <button type="submit" class="govuk-button">
+        Apply filters
+      </button>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="keywords">
+          Keywords
+        </label>
+
+        <input class="govuk-input" id="keywords" name="keywords" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+            Type
+
+          </legend>
+
+          <div class="govuk-checkboxes govuk-checkboxes--small">
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type-1" name="type" type="checkbox" value="1" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="type-1">
+                Divorce (18)
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                Financial Remedy (5)
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+              <label class="govuk-label govuk-checkboxes__label" for="type-3">
+                Probate (2)
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+
+      </div>
+
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+            Status
+
+          </legend>
+
+          <div class="govuk-checkboxes govuk-checkboxes--small">
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="status-1" name="status" type="checkbox" value="1" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="status-1">
+                Application drafted
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
+              <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                Awaiting payment
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="magistrate">
+              <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                Petition paid
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+
+<div class="hmcts-filter-layout__content">
+
+<div class="hmcts-action-bar">
+
+  <div class="hmcts-menu">
+    <div class="hmcts-menu__wrapper">
+
+      <button type="submit" class="govuk-button hmcts-menu__item hmcts-button--secondary btn-apply-filter">
+        Zobrazit filtr
+      </button>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="hmcts-scrollable-pane">
+
+  <div class="hmcts-scrollable-pane__wrapper">
+
+    <table class="govuk-table">
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+          <th class="govuk-table__header" scope="col">Spisová značka</th>
+
+          <th class="govuk-table__header" scope="col">Rozhodl soud</th>
+
+          <th class="govuk-table__header" scope="col">Soudce</th>
+
+          <th class="govuk-table__header" scope="col">Právní věta</th>
+
+          <th class="govuk-table__header" scope="col">Datum rozhodnutí</th>
+
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+
+          <th class="govuk-table__header" scope="row"><a href="#">FR1231612322</a></th>
+
+          <td class="govuk-table__cell">Vrchní soud v Praze</td>
+
+          <td class="govuk-table__cell"><a href="#">Jan Novák</a></td>
+
+          <td class="govuk-table__cell">20 Nov 2017</td>
+
+          <td class="govuk-table__cell">25. leden 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th class="govuk-table__header" scope="row"><a href="#">SC1231612322</a></th>
+
+          <td class="govuk-table__cell">Krajský soud v Plzni</td>
+
+          <td class="govuk-table__cell"><a href="#">Petra Votrubová</a></td>
+
+          <td class="govuk-table__cell">20 Nov 2017</td>
+
+          <td class="govuk-table__cell">25. leden 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th class="govuk-table__header" scope="row"><a href="#">SC1231612323</a></th>
+
+          <td class="govuk-table__cell">Krajský soud v Ostravě</td>
+
+          <td class="govuk-table__cell"><a href="#">Petra Votrubová</a></td>
+
+          <td class="govuk-table__cell">9. května 2018</td>
+
+          <td class="govuk-table__cell">9. května 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th class="govuk-table__header" scope="row"><a href="#">SC1231612324</a></th>
+
+          <td class="govuk-table__cell">Městský soud v Praze</td>
+
+          <td class="govuk-table__cell"><a href="#">Petra Votrubová</a></td>
+
+          <td class="govuk-table__cell">9. května 2018</td>
+
+          <td class="govuk-table__cell">9. května 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th class="govuk-table__header" scope="row"><a href="#">BV18D00150</a></th>
+
+          <td class="govuk-table__cell">Vrchní soud v Olomouci</td>
+
+          <td class="govuk-table__cell"><a href="#">Milan Fiala</a></td>
+
+          <td class="govuk-table__cell">9. května 2018</td>
+
+          <td class="govuk-table__cell">9. května 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th class="govuk-table__header" scope="row"><a href="#">BV18D00153</a></th>
+
+          <td class="govuk-table__cell">Vrchní soud v Praze</td>
+
+          <td class="govuk-table__cell"><a href="#">Milan Fiala</a></td>
+
+          <td class="govuk-table__cell">9. května 2018</td>
+
+          <td class="govuk-table__cell">9. května 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th class="govuk-table__header" scope="row"><a href="#">BV18D00156</a></th>
+
+          <td class="govuk-table__cell">Vrchni soud v Olomouci</td>
+
+          <td class="govuk-table__cell"><a href="#">Milan Fiala</a></td>
+
+          <td class="govuk-table__cell">9. května 2018</td>
+
+          <td class="govuk-table__cell">9. května 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th class="govuk-table__header" scope="row"><a href="#">FR1231612322</a></th>
+
+          <td class="govuk-table__cell">Vrchní soud v Praze</td>
+
+          <td class="govuk-table__cell"><a href="#">Jan Novák</a></td>
+
+          <td class="govuk-table__cell">20 Nov 2017</td>
+
+          <td class="govuk-table__cell">25. leden 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th class="govuk-table__header" scope="row"><a href="#">SC1231612322</a></th>
+
+          <td class="govuk-table__cell">Krajský soud v Plzni</td>
+
+          <td class="govuk-table__cell"><a href="#">Petra Votrubová</a></td>
+
+          <td class="govuk-table__cell">20 Nov 2017</td>
+
+          <td class="govuk-table__cell">25. leden 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th class="govuk-table__header" scope="row"><a href="#">SC1231612323</a></th>
+
+          <td class="govuk-table__cell">Krajský soud v Ostravě</td>
+
+          <td class="govuk-table__cell"><a href="#">Petra Votrubová</a></td>
+
+          <td class="govuk-table__cell">9. května 2018</td>
+
+          <td class="govuk-table__cell">9. května 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th class="govuk-table__header" scope="row"><a href="#">SC1231612324</a></th>
+
+          <td class="govuk-table__cell">Krajský soud v Českých Budějovicích</td>
+
+          <td class="govuk-table__cell"><a href="#">Petra Votrubová</a></td>
+
+          <td class="govuk-table__cell">9. května 2018</td>
+
+          <td class="govuk-table__cell">9. května 2018</td>
+
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+</div> 
+
+{% endblock %}
+
+{% block pageScripts %}
+  {% include './script.html' %}
+{% endblock %}

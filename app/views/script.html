@@ -1,0 +1,9 @@
+<script>
+  let shadesEl = document.querySelector('.hmcts-filter');
+  let coolButton = document.querySelector('.btn-apply-filter');
+
+  coolButton.addEventListener('click', () => {
+    shadesEl.classList.toggle('hmcts-hidden');
+    document.getElementById('hmcts-filter').focus();
+  });
+  </script>
