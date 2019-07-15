@@ -15,351 +15,452 @@
 {% block content %}
 
 <h1 class="govuk-heading-xl">
-  Vyhledat rozhodnutí nejvyšších a krajských soudů v2
+  Vyhledat rozhodnutí a judikaturu nejvyšších a krajských soudů v2
 </h1>
 
 <div class="hmcts-filter-layout">
-
-<div class="hmcts-filter-layout__filter">
-
-<div class="hmcts-filter hmcts-hidden" id="hmcts-filter" tabindex="-1">
-
-  <div class="hmcts-filter__header">
-
-    <div class="hmcts-filter__header-title">
-      <h2 class="govuk-heading-m">Filtr</h2>
-    </div>
-
-    <div class="hmcts-filter__header-action">
-      <button class="hmcts-filter__close" type="button">Zavrít</button>
-    </div>
-
-  </div>
-
-  <div class="hmcts-filter__content">
-
-    <div class="hmcts-filter__selected">
-
-      <div class="hmcts-filter__selected-heading">
-
-        <div class="hmcts-filter__heading-title">
-          <h2 class="govuk-heading-m">Vybrané filtry</h2>
+  <div class="hmcts-filter-layout__filter">
+    <div class="hmcts-filter" id="hmcts-filter" tabindex="-1">
+      <div class="hmcts-filter__header">
+        <div class="hmcts-filter__header-title">
+          <h2 class="govuk-heading-m">Filtr</h2>
         </div>
 
-        <div class="hmcts-filter__heading-action">
-          <p><a class="govuk-link govuk-link--no-visited-state" href="">Vymazat filtry</a></p>
+        <div class="hmcts-filter__header-action">
+          <button class="hmcts-filter__close" type="button">Zavrít</button>
         </div>
 
       </div>
-
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Kategorie rozhodnutí</h3>
-
-      <ul class="hmcts-filter-tags">
-
-        <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Odstranit tento filtr</span> A</a></li>
-
-        <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Odstranit tento filtr</span> B</a></li>
-
-      </ul>
-
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Úsek soudu</h3>
-
-      <ul class="hmcts-filter-tags">
-
-        <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Odstranit tento filtr</span> Civilní úsek</a></li>
-
-      </ul>
-
-    </div>
-
-    <div class="hmcts-filter__options">
-
-      <button type="submit" class="govuk-button">
-        Použít filtry
-      </button>
-
-      <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="keywords">
-          Věta
-        </label>
-
-        <input class="govuk-input" id="keywords" name="keywords" type="text">
-      </div>
-
-      <div class="govuk-form-group">
-
-        <fieldset class="govuk-fieldset">
-
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-
-            Kategorie rozhodnutí
-
-          </legend>
-
-          <div class="govuk-checkboxes govuk-checkboxes--small">
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="type-1" name="type" type="checkbox" value="1" checked>
-              <label class="govuk-label govuk-checkboxes__label" for="type-1">
-                A (18)
-              </label>
+      <div class="hmcts-filter__content">
+        <div class="hmcts-filter__selected">
+          <div class="hmcts-filter__selected-heading">
+            <div class="hmcts-filter__heading-title">
+              <h2 class="govuk-heading-m">Vybrané filtry</h2>
             </div>
 
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
-              <label class="govuk-label govuk-checkboxes__label" for="type-2">
-                B (5)
-              </label>
+            <div class="hmcts-filter__heading-action">
+              <p><a class="govuk-link govuk-link--no-visited-state" href="">Vymazat filtry</a></p>
             </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
-              <label class="govuk-label govuk-checkboxes__label" for="type-3">
-                C (2)
-              </label>
-            </div>
-
           </div>
-        </fieldset>
 
-      </div>
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Kategorie rozhodnutí</h3>
+          <ul class="hmcts-filter-tags">
+            <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Odstranit tento filtr</span> A</a></li>
+            <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Odstranit tento filtr</span> B</a></li>
+          </ul>
 
-      <div class="govuk-form-group">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Úsek soudu</h3>
+          <ul class="hmcts-filter-tags">
+            <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Odstranit tento filtr</span> Civilní úsek</a></li>
+          </ul>
+        </div>
 
-        <fieldset class="govuk-fieldset">
+        <div class="hmcts-filter__options">
+          <button type="submit" class="govuk-button">
+            Použít filtry
+          </button>
 
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <div class="app-c-option-select js-collapsible js-closed">
+            <button class="js-container-head app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="false" id="option-select-title-organisation" aria-controls="organisations">Soud
+              <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up">
+                  <path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path>
+              </svg>
+              <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down">
+                  <path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path>
+              </svg>
+            </button>
 
-            Úsek soudu
-
-          </legend>
-
-          <div class="govuk-radios govuk-radios--small">
-
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="status-1" name="status" type="radio" value="1" checked>
-              <label class="govuk-label govuk-radios__label" for="status-1">
-                Civilní úsek
+            <div class="app-c-option-select__filter">
+              <label for="input-6e89931e" class="govuk-label govuk-visually-hidden">
+                Filtrování soudů
               </label>
+              <input name="option-select-filter" id="input-6e89931e" class="app-c-option-select__filter-input govuk-input" type="text" aria-describedby="checkboxes-147254d1-count" aria-controls="checkboxes-147254d1">
             </div>
 
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="status-2" name="status" type="radio" value="2">
-              <label class="govuk-label govuk-radios__label" for="status-2">
-                Trestní úsek
-              </label>
-            </div>
+            <div role="group" aria-labelledby="option-select-title-organisation" class="app-c-option-select__container js-options-container" id="organisations" tabindex="-1">
+              <div class="app-c-option-select__container-inner js-auto-height-inner">
+                <span id="checkboxes-147254d1-count" class="app-c-option-select__count govuk-visually-hidden" aria-live="polite" data-single="option found" data-multiple="options found" data-selected="selected"></span>
 
+                <div id="checkboxes-147254d1" class="gem-c-checkboxes govuk-form-group" data-module="checkboxes">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Soudyc</legend>
+                    <ul class="govuk-checkboxes gem-c-checkboxes__list govuk-checkboxes--small">
+                      <li class="govuk-checkboxes__item">
+                       <input type="checkbox" name="organisations[]" id="organisations-academy-for-social-justice" value="academy-for-social-justice" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Academy for Social Justice" data-controls="js-search-results-info" aria-controls="js-search-results-info">
+                        <label for="organisations-academy-for-social-justice" class="govuk-label govuk-checkboxes__label">Městský soud v Praze</label>
+                      </li>
+                      
+                      <li class="govuk-checkboxes__item">
+                        <input type="checkbox" name="organisations[]" id="organisations-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
+                        <label for="organisations-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Městský soud v Praze</label>
+                      </li>
+
+                      <li class="govuk-checkboxes__item">
+                        <input type="checkbox" name="organisations[]" id="organisations-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
+                        <label for="organisations-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Městský soud v Praze</label>
+                      </li>
+
+                      <li class="govuk-checkboxes__item">
+                        <input type="checkbox" name="organisations[]" id="organisations-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
+                        <label for="organisations-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Městský soud v Praze</label>
+                      </li>
+
+                      <li class="govuk-checkboxes__item">
+                        <input type="checkbox" name="organisations[]" id="organisations-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
+                        <label for="organisations-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Městský soud v Praze</label>
+                      </li>
+                    </ul>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
           </div>
-        </fieldset>
 
+          <div class="app-c-option-select js-collapsible js-closed">
+            <button class="js-container-head app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="false" id="option-select-title-organisation" aria-controls="organisations">Soudce
+              <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up">
+                  <path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path>
+              </svg>
+              <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down">
+                  <path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path>
+              </svg>
+            </button>
+
+            <div class="app-c-option-select__filter">
+              <label for="input-6e89931e" class="govuk-label govuk-visually-hidden">
+                Filtrování soudců
+              </label>
+              <input name="option-select-filter" id="input-6e89931e" class="app-c-option-select__filter-input govuk-input" type="text" aria-describedby="checkboxes-147254d1-count" aria-controls="checkboxes-147254d1">
+            </div>
+
+            <div role="group" aria-labelledby="option-select-title-organisation" class="app-c-option-select__container js-options-container" id="organisations" tabindex="-1">
+              <div class="app-c-option-select__container-inner js-auto-height-inner">
+                <span id="checkboxes-147254d1-count" class="app-c-option-select__count govuk-visually-hidden" aria-live="polite" data-single="option found" data-multiple="options found" data-selected="selected"></span>
+
+                <div id="checkboxes-147254d1" class="gem-c-checkboxes govuk-form-group" data-module="checkboxes">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Soudci</legend>
+                    <ul class="govuk-checkboxes gem-c-checkboxes__list govuk-checkboxes--small">
+                      <li class="govuk-checkboxes__item">
+                       <input type="checkbox" name="organisations[]" id="organisations-academy-for-social-justice" value="academy-for-social-justice" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Academy for Social Justice" data-controls="js-search-results-info" aria-controls="js-search-results-info">
+                        <label for="organisations-academy-for-social-justice" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
+                      </li>
+
+                      <li class="govuk-checkboxes__item">
+                        <input type="checkbox" name="organisations[]" id="organisations-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
+                        <label for="organisations-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
+                      </li>
+
+                      <li class="govuk-checkboxes__item">
+                        <input type="checkbox" name="organisations[]" id="organisations-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
+                        <label for="organisations-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
+                      </li>
+
+                      <li class="govuk-checkboxes__item">
+                        <input type="checkbox" name="organisations[]" id="organisations-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
+                        <label for="organisations-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
+                      </li>
+
+                      <li class="govuk-checkboxes__item">
+                        <input type="checkbox" name="organisations[]" id="organisations-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
+                        <label for="organisations-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
+                      </li>
+                    </ul>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Hledat text rozhodnutí, právní větu
+            </label>
+
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Forma rozhodnutí
+              </legend>
+              <div class="govuk-radios govuk-radios--small">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="status-1" name="status" type="radio" value="1" checked>
+                  <label class="govuk-label govuk-radios__label" for="status-1">
+                    Rozsudek
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="status-2" name="status" type="radio" value="2">
+                  <label class="govuk-label govuk-radios__label" for="status-2">
+                    Usnesení
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Úsek soudu
+              </legend>
+              <div class="govuk-radios govuk-radios--small">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="status-1" name="status" type="radio" value="1" checked>
+                  <label class="govuk-label govuk-radios__label" for="status-1">
+                    Civilní úsek
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="status-2" name="status" type="radio" value="2">
+                  <label class="govuk-label govuk-radios__label" for="status-2">
+                    Trestní úsek
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          {% from "date-input/macro.njk" import govukDateInput %}
+
+          {{ govukDateInput({
+            id: "dob",
+            namePrefix: "dob",
+            fieldset: {
+              legend: {
+                text: "Datum rozhodnutí od",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "Například, 2005 nebo 21/03/2005"
+            },
+            items: [
+              {
+                name: "year",
+                classes: "govuk-input--width-8",
+                autocomplete: "bday-year"
+              }
+            ]
+          }) }}
+
+          {{ govukDateInput({
+            id: "dob",
+            namePrefix: "dob",
+            fieldset: {
+              legend: {
+                text: "Datum rozhodnutí do",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "Například, 2005 nebo 21/03/2005"
+            },
+            items: [
+              {
+                name: "year",
+                classes: "govuk-input--width-8",
+                autocomplete: "bday-year"
+              }
+            ]
+          }) }}
+
+          <div class="app-c-option-select js-collapsible js-closed">
+            <button class="js-container-head app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="false" id="option-select-title-organisation" aria-controls="organisations">Kategorie
+              <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up">
+                  <path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path>
+              </svg>
+              <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down">
+                  <path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path>
+              </svg>
+            </button>
+
+            <div class="app-c-option-select__filter">
+              <label for="input-6e89931e" class="govuk-label govuk-visually-hidden">
+                Filtrování kategorií
+              </label>
+              <input name="option-select-filter" id="input-6e89931e" class="app-c-option-select__filter-input govuk-input" type="text" aria-describedby="checkboxes-147254d1-count" aria-controls="checkboxes-147254d1">
+            </div>
+
+          <div role="group" aria-labelledby="option-select-title-organisation" class="app-c-option-select__container js-options-container" id="organisations" tabindex="-1">
+              <div class="app-c-option-select__container-inner js-auto-height-inner">
+                <span id="checkboxes-147254d1-count" class="app-c-option-select__count govuk-visually-hidden" aria-live="polite" data-single="option found" data-multiple="options found" data-selected="selected"></span>
+
+                <div id="checkboxes-147254d1" class="gem-c-checkboxes govuk-form-group" data-module="checkboxes">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Kategorie rozhodnutí</legend>
+                    <ul class="govuk-checkboxes gem-c-checkboxes__list govuk-checkboxes--small">
+                      <li class="govuk-checkboxes__item">
+                       <input type="checkbox" name="organisations[]" id="organisations-academy-for-social-justice" value="academy-for-social-justice" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Academy for Social Justice" data-controls="js-search-results-info" aria-controls="js-search-results-info">
+                        <label for="organisations-academy-for-social-justice" class="govuk-label govuk-checkboxes__label">A</label>
+                      </li>
+
+                      <li class="govuk-checkboxes__item">
+                        <input type="checkbox" name="organisations[]" id="organisations-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
+                        <label for="organisations-accelerated-access-review" class="govuk-label govuk-checkboxes__label">B</label>
+                      </li>
+
+                      <li class="govuk-checkboxes__item">
+                        <input type="checkbox" name="organisations[]" id="organisations-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
+                        <label for="organisations-accelerated-access-review" class="govuk-label govuk-checkboxes__label">C</label>
+                      </li>
+                    </ul>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Kategorie rozhodnutí
+              </legend>
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="type-1" name="type" type="checkbox" value="1" checked>
+                  <label class="govuk-label govuk-checkboxes__label" for="type-1">
+                    A (18)
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
+                  <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                    B (5)
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+                  <label class="govuk-label govuk-checkboxes__label" for="type-3">
+                    C (2)
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hmcts-filter-layout__content">
+    <div class="hmcts-action-bar">
+      <div class="hmcts-action-bar__filter">
+        <button class="govuk-button hmcts-button--secondary btn-apply-filter" type="button" aria-haspopup="true" aria-expanded="false">Zobrazit filtr</button>
       </div>
 
+      <div class="">
+        <h2 class="govuk-heading-s">3 000 výsledků</h2>
+      </div>
     </div>
 
-  </div>
+    <hr>
 
-</div>
+    <div id="js-sort-options">
+      <div class="govuk-form-group">
+        <label for="order" class="result-region-header__sort-label govuk-label">Seřadit podle</label>
+        <select class="js-order-results govuk-select" name="order" id="order" aria-controls="js-search-results-info" data-default-sort-option="updated-newest" data-relevance-sort-option="relevance" data-module="track-select-change">
+            <option value="most-viewed" selected="" data-track-category="dropDownClicked" data-track-action="clicked" data-track-label="Most viewed">Nejnavštěvovanější</option>
+            <option value="updated-newest" data-track-category="dropDownClicked" data-track-action="clicked" data-track-label="Updated (newest)">Aktualizováno (nejnovější)</option>
+            <option value="updated-oldest" data-track-category="dropDownClicked" data-track-action="clicked" data-track-label="Updated (oldest)">Aktualizováno (nejstarší)</option>
+        </select>
+      </div>
+    </div>
 
-</div>
+    <div class="js-results">
+      <ul class="finder-results js-finder-results">
+        <li class="document"> 
+          <a href="/" class="document__link">
+          Rozhodnutí ve věci XXX</a> 
+          <p>Návrh na vklad vlastnického práva do katastru nemovitostí podle smlouvy, kterou nemovitosti převádí do vlastnictví jiného osoba, která ke dni návrhu na vklad není v katastru zapsána jako vlastník převáděných nemovitostí, je třeba zamítnout pro nesplnění podmínky vkladu uvedené v § 5 odst. 1 písm. a zák. č. 265/1992 Sb., neboť navrhovanému vkladu je v takovém případě na překážku stav zápisů v katastru. Doloží-li nezapsaný převodce své oprávnění s nemovitostmi nakládat, je tím sice splněna podmínka vkladu uvedená v § 5 odst. 1 písm. e cit. zák., tj. oprávnění účastníka nakládat s předmětem právního úkonu, ale nikoli podmínka uvedená v § 5 odst. 1 písm. a cit. zák.</p> 
+          <dl class="document-metadata"> 
+            <dt class="document-metadata__label"> Rozhodl soud: </dt> 
+            <dd class="document-metadata__value"> Městský soud v Praze</dd> 
+            <dt class="document-metadata__label"> Datum rozhodnutí: </dt> 
+            <dd class="document-metadata__value"> 
+              <time datetime="2019-07-09">9. června 2019</time> 
+            </dd> 
+            <dt class="document-metadata__label"> Spisová značka: </dt> 
+            <dd class="document-metadata__value"> 53Cm 36/2001</dd> 
+          </dl> 
+        </li>
 
-<div class="hmcts-filter-layout__content">
+        <li class="document"> 
+          <a href="/" class="document__link">
+          Rozhodnutí ve věci XXX</a> 
+          <p>Návrh na vklad vlastnického práva do katastru nemovitostí podle smlouvy, kterou nemovitosti převádí do vlastnictví jiného osoba, která ke dni návrhu na vklad není v katastru zapsána jako vlastník převáděných nemovitostí, je třeba zamítnout pro nesplnění podmínky vkladu uvedené v § 5 odst. 1 písm. a zák. č. 265/1992 Sb., neboť navrhovanému vkladu je v takovém případě na překážku stav zápisů v katastru. Doloží-li nezapsaný převodce své oprávnění s nemovitostmi nakládat, je tím sice splněna podmínka vkladu uvedená v § 5 odst. 1 písm. e cit. zák., tj. oprávnění účastníka nakládat s předmětem právního úkonu, ale nikoli podmínka uvedená v § 5 odst. 1 písm. a cit. zák.</p> 
+          <dl class="document-metadata"> 
+            <dt class="document-metadata__label"> Rozhodl soud: </dt> 
+            <dd class="document-metadata__value"> Městský soud v Praze</dd> 
+            <dt class="document-metadata__label"> Datum rozhodnutí: </dt> 
+            <dd class="document-metadata__value"> 
+              <time datetime="2019-07-09">9. června 2019</time> 
+            </dd> 
+            <dt class="document-metadata__label"> Spisová značka: </dt> 
+            <dd class="document-metadata__value"> 53Cm 36/2001</dd> 
+          </dl> 
+        </li>
 
-<div class="hmcts-action-bar">
-  <div class="hmcts-action-bar__filter"><button class="govuk-button hmcts-button--secondary btn-apply-filter" type="button" aria-haspopup="true" aria-expanded="false">Zobrazit filtr</button></div>
+        <li class="document"> 
+          <a href="/" class="document__link">
+          Rozhodnutí ve věci XXX</a> 
+          <p>Návrh na vklad vlastnického práva do katastru nemovitostí podle smlouvy, kterou nemovitosti převádí do vlastnictví jiného osoba, která ke dni návrhu na vklad není v katastru zapsána jako vlastník převáděných nemovitostí, je třeba zamítnout pro nesplnění podmínky vkladu uvedené v § 5 odst. 1 písm. a zák. č. 265/1992 Sb., neboť navrhovanému vkladu je v takovém případě na překážku stav zápisů v katastru. Doloží-li nezapsaný převodce své oprávnění s nemovitostmi nakládat, je tím sice splněna podmínka vkladu uvedená v § 5 odst. 1 písm. e cit. zák., tj. oprávnění účastníka nakládat s předmětem právního úkonu, ale nikoli podmínka uvedená v § 5 odst. 1 písm. a cit. zák.</p> 
+          <dl class="document-metadata"> 
+            <dt class="document-metadata__label"> Rozhodl soud: </dt> 
+            <dd class="document-metadata__value"> Městský soud v Praze</dd> 
+            <dt class="document-metadata__label"> Datum rozhodnutí: </dt> 
+            <dd class="document-metadata__value"> 
+              <time datetime="2019-07-09">9. června 2019</time> 
+            </dd> 
+            <dt class="document-metadata__label"> Spisová značka: </dt> 
+            <dd class="document-metadata__value"> 53Cm 36/2001</dd> 
+          </dl> 
+        </li>
 
-  <div class="hmcts-menu">
-    <div class="hmcts-menu__wrapper">
-      <h2 class="govuk-heading-m">3 000 výsledků</h2>
+        <li class="document"> 
+          <a href="/" class="document__link">
+          Rozhodnutí ve věci XXX</a> 
+          <p>Návrh na vklad vlastnického práva do katastru nemovitostí podle smlouvy, kterou nemovitosti převádí do vlastnictví jiného osoba, která ke dni návrhu na vklad není v katastru zapsána jako vlastník převáděných nemovitostí, je třeba zamítnout pro nesplnění podmínky vkladu uvedené v § 5 odst. 1 písm. a zák. č. 265/1992 Sb., neboť navrhovanému vkladu je v takovém případě na překážku stav zápisů v katastru. Doloží-li nezapsaný převodce své oprávnění s nemovitostmi nakládat, je tím sice splněna podmínka vkladu uvedená v § 5 odst. 1 písm. e cit. zák., tj. oprávnění účastníka nakládat s předmětem právního úkonu, ale nikoli podmínka uvedená v § 5 odst. 1 písm. a cit. zák.</p> 
+          <dl class="document-metadata"> 
+            <dt class="document-metadata__label"> Rozhodl soud: </dt> 
+            <dd class="document-metadata__value"> Městský soud v Praze</dd> 
+            <dt class="document-metadata__label"> Datum rozhodnutí: </dt> 
+            <dd class="document-metadata__value"> 
+              <time datetime="2019-07-09">9. června 2019</time> 
+            </dd> 
+            <dt class="document-metadata__label"> Spisová značka: </dt> 
+            <dd class="document-metadata__value"> 53Cm 36/2001</dd> 
+          </dl> 
+        </li>
+
+        <li class="document"> 
+          <a href="/" class="document__link">
+          Rozhodnutí ve věci XXX</a> 
+          <p>Návrh na vklad vlastnického práva do katastru nemovitostí podle smlouvy, kterou nemovitosti převádí do vlastnictví jiného osoba, která ke dni návrhu na vklad není v katastru zapsána jako vlastník převáděných nemovitostí, je třeba zamítnout pro nesplnění podmínky vkladu uvedené v § 5 odst. 1 písm. a zák. č. 265/1992 Sb., neboť navrhovanému vkladu je v takovém případě na překážku stav zápisů v katastru. Doloží-li nezapsaný převodce své oprávnění s nemovitostmi nakládat, je tím sice splněna podmínka vkladu uvedená v § 5 odst. 1 písm. e cit. zák., tj. oprávnění účastníka nakládat s předmětem právního úkonu, ale nikoli podmínka uvedená v § 5 odst. 1 písm. a cit. zák.</p> 
+          <dl class="document-metadata"> 
+            <dt class="document-metadata__label"> Rozhodl soud: </dt> 
+            <dd class="document-metadata__value"> Městský soud v Praze</dd> 
+            <dt class="document-metadata__label"> Datum rozhodnutí: </dt> 
+            <dd class="document-metadata__value"> 
+              <time datetime="2019-07-09">9. června 2019</time> 
+            </dd> 
+            <dt class="document-metadata__label"> Spisová značka: </dt> 
+            <dd class="document-metadata__value"> 53Cm 36/2001</dd> 
+          </dl> 
+        </li>
+      </ul>
     </div>
   </div>
-
-</div>
-
-<div class="hmcts-scrollable-pane">
-
-  <div class="hmcts-scrollable-pane__wrapper">
-
-    <table class="govuk-table">
-
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-
-          <th class="govuk-table__header" scope="col">Spisová značka</th>
-
-          <th class="govuk-table__header" scope="col">Rozhodl soud</th>
-
-          <th class="govuk-table__header" scope="col">Soudce</th>
-
-          <th class="govuk-table__header" scope="col">Právní věta</th>
-
-          <th class="govuk-table__header" scope="col">Datum rozhodnutí</th>
-
-        </tr>
-      </thead>
-
-      <tbody class="govuk-table__body">
-
-        <tr class="govuk-table__row">
-
-          <th class="govuk-table__header" scope="row"><a href="#">FR1231612322</a></th>
-
-          <td class="govuk-table__cell">Vrchní soud v Praze</td>
-
-          <td class="govuk-table__cell"><a href="#">Jan Novák</a></td>
-
-          <td class="govuk-table__cell">20 Nov 2017</td>
-
-          <td class="govuk-table__cell">25. leden 2018</td>
-
-        </tr>
-
-        <tr class="govuk-table__row">
-
-          <th class="govuk-table__header" scope="row"><a href="#">SC1231612322</a></th>
-
-          <td class="govuk-table__cell">Krajský soud v Plzni</td>
-
-          <td class="govuk-table__cell"><a href="#">Petra Votrubová</a></td>
-
-          <td class="govuk-table__cell">20 Nov 2017</td>
-
-          <td class="govuk-table__cell">25. leden 2018</td>
-
-        </tr>
-
-        <tr class="govuk-table__row">
-
-          <th class="govuk-table__header" scope="row"><a href="#">SC1231612323</a></th>
-
-          <td class="govuk-table__cell">Krajský soud v Ostravě</td>
-
-          <td class="govuk-table__cell"><a href="#">Petra Votrubová</a></td>
-
-          <td class="govuk-table__cell">9. května 2018</td>
-
-          <td class="govuk-table__cell">9. května 2018</td>
-
-        </tr>
-
-        <tr class="govuk-table__row">
-
-          <th class="govuk-table__header" scope="row"><a href="#">SC1231612324</a></th>
-
-          <td class="govuk-table__cell">Městský soud v Praze</td>
-
-          <td class="govuk-table__cell"><a href="#">Petra Votrubová</a></td>
-
-          <td class="govuk-table__cell">9. května 2018</td>
-
-          <td class="govuk-table__cell">9. května 2018</td>
-
-        </tr>
-
-        <tr class="govuk-table__row">
-
-          <th class="govuk-table__header" scope="row"><a href="#">BV18D00150</a></th>
-
-          <td class="govuk-table__cell">Vrchní soud v Olomouci</td>
-
-          <td class="govuk-table__cell"><a href="#">Milan Fiala</a></td>
-
-          <td class="govuk-table__cell">9. května 2018</td>
-
-          <td class="govuk-table__cell">9. května 2018</td>
-
-        </tr>
-
-        <tr class="govuk-table__row">
-
-          <th class="govuk-table__header" scope="row"><a href="#">BV18D00153</a></th>
-
-          <td class="govuk-table__cell">Vrchní soud v Praze</td>
-
-          <td class="govuk-table__cell"><a href="#">Milan Fiala</a></td>
-
-          <td class="govuk-table__cell">9. května 2018</td>
-
-          <td class="govuk-table__cell">9. května 2018</td>
-
-        </tr>
-
-        <tr class="govuk-table__row">
-
-          <th class="govuk-table__header" scope="row"><a href="#">BV18D00156</a></th>
-
-          <td class="govuk-table__cell">Vrchni soud v Olomouci</td>
-
-          <td class="govuk-table__cell"><a href="#">Milan Fiala</a></td>
-
-          <td class="govuk-table__cell">9. května 2018</td>
-
-          <td class="govuk-table__cell">9. května 2018</td>
-
-        </tr>
-
-        <tr class="govuk-table__row">
-
-          <th class="govuk-table__header" scope="row"><a href="#">FR1231612322</a></th>
-
-          <td class="govuk-table__cell">Vrchní soud v Praze</td>
-
-          <td class="govuk-table__cell"><a href="#">Jan Novák</a></td>
-
-          <td class="govuk-table__cell">20 Nov 2017</td>
-
-          <td class="govuk-table__cell">25. leden 2018</td>
-
-        </tr>
-
-        <tr class="govuk-table__row">
-
-          <th class="govuk-table__header" scope="row"><a href="#">SC1231612322</a></th>
-
-          <td class="govuk-table__cell">Krajský soud v Plzni</td>
-
-          <td class="govuk-table__cell"><a href="#">Petra Votrubová</a></td>
-
-          <td class="govuk-table__cell">20 Nov 2017</td>
-
-          <td class="govuk-table__cell">25. leden 2018</td>
-
-        </tr>
-
-        <tr class="govuk-table__row">
-
-          <th class="govuk-table__header" scope="row"><a href="#">SC1231612323</a></th>
-
-          <td class="govuk-table__cell">Krajský soud v Ostravě</td>
-
-          <td class="govuk-table__cell"><a href="#">Petra Votrubová</a></td>
-
-          <td class="govuk-table__cell">9. května 2018</td>
-
-          <td class="govuk-table__cell">9. května 2018</td>
-
-        </tr>
-
-        <tr class="govuk-table__row">
-
-          <th class="govuk-table__header" scope="row"><a href="#">SC1231612324</a></th>
-
-          <td class="govuk-table__cell">Krajský soud v Českých Budějovicích</td>
-
-          <td class="govuk-table__cell"><a href="#">Petra Votrubová</a></td>
-
-          <td class="govuk-table__cell">9. května 2018</td>
-
-          <td class="govuk-table__cell">9. května 2018</td>
-
-        </tr>
-
-      </tbody>
-    </table>
-
-  </div>
-
-</div>
 </div> 
 
 {% endblock %}

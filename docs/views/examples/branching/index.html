@@ -1,15 +1,11 @@
-{% extends "layout_unbranded.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
-  justice - judikatura prototyp
+  Example - Branching
 {% endblock %}
 
 {% block beforeContent %}
-  {% from "back-link/macro.njk" import govukBackLink %}
-
-  {{ govukBackLink({
-    "href": "/"
-  }) }}
+  {% include "includes/breadcrumb_examples.html" %}
 {% endblock %}
 
 {% block content %}
@@ -20,52 +16,45 @@
       <form action="/docs/examples/branching/over-18-answer" method="post" class="form">
 
         <h1 class="govuk-heading-xl">
-          Vyhledat rozhodnutí nejvyšších a krajských soudů v1
+          Branching
         </h1>
 
-        {% from "radios/macro.njk" import govukRadios %}
+        <p>
+          You can show a user different pages, depending on how they've answered a question.
+        </p>
 
-        {{ govukRadios({
-          "idPrefix": "how-contacted-checked",
-          "name": "how-contacted-checked",
-          "fieldset": {
-            "legend": {
-              "text": "Vyhledat podle:"
-            }
-          },
-          "hint": {
-            "text": "Pole u jména soudce jsou nepovinná."
-          },
-          "items": [
-            {
-              "value": true,
-              "name": "soudce",
-              "text": "Jména soudce (doporučeno)",
-              "checked": true,
-              "conditional": {
-                "html": "<label class=\"govuk-label\" for=\"context-email\">Jméno a příjmení</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"context-email\" type=\"text\" id=\"context-email\">\n<br>\n<label class=\"govuk-label govuk-!-margin-top-3\" for=\"context-email\">Datum od</label>\n<span id=\"input-with-hint-text-hint\" class=\"govuk-hint\">
-                Například, 2017 nebo 03/07/2016.</span>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"context-email\" type=\"text\" id=\"context-email\">\n"
-              }
-            },
-            {
-              "value": false,
-              "name": "spisova-znacka",
-              "text": "Spisové značky (do url za branching/ napsat, spisova-znacka)"
-            },
-            {
-              "value": false,
-              "name": "soud",
-              "text": "Názvu soudu nebo jeho adresy (do url za branching/ napsat, nazev-soudu)"
-            },
-            {
-              "value": false,
-              "name": "a-z",
-              "text": "Seznamu od A do Z"
-            }
-          ]
-        }) }}
+        <p>
+          The code for this example is in your prototype folder:
+        </p>
 
-        <button class="govuk-button">Pokračovat</button>
+        <pre class="app-code"><code>/docs/documentation_routes.js
+/docs/views/examples/branching</code></pre>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Are you 18 or over?
+            </h2>
+          </legend>
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="over-18-yes" name="over-18" type="radio" value="true">
+              <label class="govuk-label govuk-radios__label" for="over-18-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="over18-no" name="over-18" type="radio" value="false">
+              <label class="govuk-label govuk-radios__label" for="over-18-no">
+                No
+              </label>
+            </div>
+          </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button">Continue</button>
 
       </form>
 

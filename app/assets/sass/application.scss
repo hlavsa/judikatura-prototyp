@@ -364,42 +364,325 @@ $govuk-global-styles: true;
         margin-right: 10px;
         padding-right: 12px;
     }
-    .hmcts-action-bar__filter:after {
-        content: "";
-        background-color: #dee0e2;
-        height: 40px;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 2px;
-    }
 }
 
 .js-enabled .hmcts-hidden {
     display: none;
 }
 
-.a-z-navigation {
-  font-size: 120%;
-  font-weight: 600;
-  padding-bottom: 5em;
+.document {
+  border-bottom: solid 1px #bfc1c3;
+  padding: 15px 0;
 }
-.a-z-navigation li {
-  border: 1px solid black;
-  width: 1.2em;
-  height: 1.2em;
-  padding: .3em .4em .2em .4em;
-  margin: 5px 5px 5px 5px;
-  list-style-type: none;
-  float: left;
-  vertical-align: baseline;
-  text-align: center;
-}
-.a-z-navigation li a:link {
+.document__link {
+  font-family: "nta", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  margin: 0;
   text-decoration: none;
 }
-.a-z-navigation li a {
+@media print {
+  .document__link {
+      font-family: sans-serif;
+  }
+}
+@media (min-width: 40.0625em) {
+  .document__link {
+      font-size: 19px;
+      line-height: 1.3157894737;
+  }
+}
+@media print {
+  .document__link {
+      font-size: 14pt;
+      line-height: 1.15;
+  }
+}
+.document-metadata {
+  margin: 0;
+}
+.document-metadata__label,
+.document-metadata__value {
+  font-family: "nta", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.25;
   display: inline-block;
+  margin-left: 0;
+}
+@media print {
+  .document-metadata__label,
+  .document-metadata__value {
+      font-family: sans-serif;
+  }
+}
+@media (min-width: 40.0625em) {
+  .document-metadata__label,
+  .document-metadata__value {
+      font-size: 14px;
+      line-height: 1.4285714286;
+  }
+}
+@media print {
+  .document-metadata__label,
+  .document-metadata__value {
+      font-size: 12pt;
+      line-height: 1.2;
+  }
+}
+.document-metadata__value {
+  margin-right: 10px;
+}
+.finder-results {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+@media print {
+    .document-metadata:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .document-metadata__label {
+        display: none;
+    }
+    .document-metadata__value {
+        display: inline-block;
+        margin-left: 0;
+        margin-right: 10px;
+    }
+    .filtered-results a,
+    .filtered-results dl,
+    .filtered-results ul,
+    .filtered-results li {
+        margin: 0;
+    }
+    .filtered-results ul {
+        padding: 0;
+    }
+    .filtered-results .document {
+        margin: 10px 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #bfc1c3;
+        list-style: none;
+    }
+    .filtered-results a {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+}
+
+.result-region-header__sort-label {
+  padding-right: 5px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+@media (min-width: 40.0625em) {
+  .result-region-header__sort-label {
+      padding-right: 5px;
+  }
+}
+
+.gem-c-checkboxes__list {
+  padding-left: 0;
+  margin: 0;
+}
+.gem-c-checkboxes .gem-c-checkboxes__legend--hidden {
+  position: absolute!important;
+  width: 1px!important;
+  height: 1px!important;
+  margin: 0!important;
+  padding: 0!important;
+  overflow: hidden!important;
+  clip: rect(0 0 0 0)!important;
+  -webkit-clip-path: inset(50%)!important;
+  clip-path: inset(50%)!important;
+  border: 0!important;
+  white-space: nowrap!important;
+}
+.app-c-option-select {
+  position: relative;
+  padding: 0 0 1px;
+  background-color: #dee0e2;
+  margin-bottom: 30px;
+}
+@media (min-width: 769px) {
+  .app-c-option-select::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 7px;
+  }
+  .app-c-option-select::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: rgba(0, 0, 0, 0.5);
+      -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  }
+}
+.app-c-option-select.js-closed .app-c-option-select__filter,
+.app-c-option-select.js-closed .app-c-option-select__container,
+.app-c-option-select.js-closed .app-c-option-select__icon--up {
+  display: none;
+}
+.app-c-option-select.js-closed .app-c-option-select__icon--down {
+  display: block;
+}
+.app-c-option-select .gem-c-checkboxes {
+  margin: 0;
+}
+.app-c-option-select__title {
+  font-family: "nta", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  padding: 10px 8px 5px 16px;
+  margin: 0;
+}
+@media print {
+  .app-c-option-select__title {
+      font-family: sans-serif;
+  }
+}
+@media (min-width: 40.0625em) {
+  .app-c-option-select__title {
+      font-size: 19px;
+      line-height: 1.3157894737;
+  }
+}
+@media print {
+  .app-c-option-select__title {
+      font-size: 14pt;
+      line-height: 1.15;
+  }
+}
+.app-c-option-select__button {
+  z-index: 100;
+  padding-right: 40px;
+  width: 100%;
+  background: none;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+}
+.app-c-option-select__button:hover {
+  background-color: #bfc1c3;
+}
+.app-c-option-select__button:hover ~ .app-c-option-select__container,
+.app-c-option-select__button:hover ~ .app-c-option-select__filter {
+  border-color: #bfc1c3;
+}
+.app-c-option-select__button::-moz-focus-inner {
+  border: 0;
+}
+.app-c-option-select__button:focus {
+  outline: none;
+}
+.app-c-option-select__button:focus:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  outline: solid 3px #ffbf47;
+}
+.app-c-option-select__icon {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 30px;
+  height: 40px;
+  fill: currentColor;
+}
+.app-c-option-select__container {
+  position: relative;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 5px solid #dee0e2;
+  background-color: #ffffff;
+}
+.app-c-option-select__container:focus {
+  outline: 0;
+}
+.app-c-option-select__container-inner {
+  padding: 5px 13px;
+}
+.app-c-option-select__filter {
+  position: relative;
+  background: #ffffff;
+  border-left: 5px solid #dee0e2;
+  border-right: 5px solid #dee0e2;
+  padding: 13px 13px 10px 13px;
+}
+.app-c-option-select__filter-input {
+  font-family: "nta", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  padding-left: 33px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36' width='40' height='40'%3E%3Cpath d='M25.7 24.8L21.9 21c.7-1 1.1-2.2 1.1-3.5 0-3.6-2.9-6.5-6.5-6.5S10 13.9 10 17.5s2.9 6.5 6.5 6.5c1.6 0 3-.6 4.1-1.5l3.7 3.7 1.4-1.4zM12 17.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5-4.5-2-4.5-4.5z' fill='currentColor'%3E%3C/path%3E%3C/svg%3E") #fff no-repeat -5px -3px;
+}
+@media print {
+  .app-c-option-select__filter-input {
+      font-family: sans-serif;
+  }
+}
+@media (min-width: 40.0625em) {
+  .app-c-option-select__filter-input {
+      font-size: 19px;
+      line-height: 1.3157894737;
+  }
+}
+@media print {
+  .app-c-option-select__filter-input {
+      font-size: 14pt;
+      line-height: 1.15;
+  }
+}
+@media (min-width: 40.0625em) {
+  .app-c-option-select__filter-input {
+      font-family: "nta", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.1428571429;
+  }
+}
+@media print and (min-width: 40.0625em) {
+  .app-c-option-select__filter-input {
+      font-family: sans-serif;
+  }
+}
+@media (min-width: 40.0625em) and (min-width: 40.0625em) {
+  .app-c-option-select__filter-input {
+      font-size: 16px;
+      line-height: 1.25;
+  }
+}
+@media print and (min-width: 40.0625em) {
+  .app-c-option-select__filter-input {
+      font-size: 14pt;
+      line-height: 1.2;
+  }
+}
+.js-enabled .app-c-option-select__container {
+  border: 5px solid #dee0e2;
+  border-top: 0;
+}
+.js-enabled .app-c-option-select__icon--up {
+  display: block;
+}
+.js-enabled .app-c-option-select__container {
+  height: 200px;
 }

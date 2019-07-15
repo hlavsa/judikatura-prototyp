@@ -1,6 +1,7 @@
 <script>
   let shadesEl = document.querySelector('.hmcts-filter');
   let coolButton = document.querySelector('.btn-apply-filter');
+  let selButton = document.querySelector('.app-c-option-select__button');
 
   coolButton.addEventListener('click', function () {
     shadesEl.classList.toggle('hmcts-hidden');
@@ -12,5 +13,12 @@
   closeButton.addEventListener('click', function () {
     shadesEl.classList.toggle('hmcts-hidden');
     document.getElementById('hmcts-filter').focus();
+  });
+
+  let selectButton = document.querySelector('.app-c-option-select');
+
+  selButton.addEventListener('click', function () {
+    selectButton.classList.toggle('js-closed');
+    document.getElementById('app-c-option-select').focus();
   });
   </script>

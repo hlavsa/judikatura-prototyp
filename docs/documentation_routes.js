@@ -58,12 +58,12 @@ router.post('/examples/branching/over-18-answer', function (req, res) {
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
 
-  let over18 = req.session.data['soudce']
+  let over18 = req.session.data['over-18']
 
   if (over18 === 'false') {
-    res.redirect('/docs/examples/branching/nazev-soudu')
+    res.redirect('/docs/examples/branching/under-18')
   } else {
-    res.redirect('/docs/examples/branching/soudce')
+    res.redirect('/docs/examples/branching/over-18')
   }
 })
 
