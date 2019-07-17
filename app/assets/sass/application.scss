@@ -686,3 +686,171 @@ $govuk-global-styles: true;
 .js-enabled .app-c-option-select__container {
   height: 200px;
 }
+
+.app-back-to-top {
+    display: none;
+}
+
+@media (min-width: 40.0625em) {
+  .app-back-to-top {
+    display: block;
+    // position: -webkit-sticky;
+    // position: sticky;
+    top: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .app-back-to-top a,
+  .app-back-to-top a:link,
+  .app-back-to-top a:visited {
+      color: #2e358b;
+  }
+}
+
+.app-back-to-top__icon {
+  display: inline-block;
+  width: .8em;
+  height: 1em;
+  margin-top: -5px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+@media (min-width: 48.0625em) {
+  .hmcts-pagination {
+      margin-left: -5px;
+      margin-right: -5px;
+      font-size: 0;
+      text-align: justify;
+  }
+  .hmcts-pagination:after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+  }
+}
+
+.hmcts-pagination__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 48.0625em) {
+  .hmcts-pagination__list {
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: middle;
+  }
+}
+
+@media (min-width: 48.0625em) {
+  .hmcts-pagination__results {
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: middle;
+  }
+}
+
+.hmcts-pagination__item {
+  font-family: "nta", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25;
+  display: inline-block;
+}
+
+@media print {
+  .hmcts-pagination__item {
+      font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .hmcts-pagination__item {
+      font-size: 19px;
+      font-size: 1.1875rem;
+      line-height: 1.31579;
+  }
+}
+
+@media print {
+  .hmcts-pagination__item {
+      font-size: 14pt;
+      line-height: 1.15;
+  }
+}
+
+.hmcts-pagination__item--active,
+.hmcts-pagination__item--dots {
+  font-weight: bold;
+  height: 25px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.hmcts-pagination__item--dots {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.hmcts-pagination__item--prev .hmcts-pagination__link:before,
+.hmcts-pagination__item--prev .hmcts-pagination__link:after,
+.hmcts-pagination__item--next .hmcts-pagination__link:before,
+.hmcts-pagination__item--next .hmcts-pagination__link:after {
+  background-image: url(https://hmcts-design-system.herokuapp.com/hmcts-assets/images/icon-pagination.svg);
+  background-repeat: no-repeat;
+  background-size: 22px 36px;
+  background-position: 0 0;
+  display: inline-block;
+  height: 18px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+  width: 11px;
+}
+
+.hmcts-pagination__item--prev .hmcts-pagination__link:before {
+  background-position: 0 0;
+  content: "";
+  margin-right: 10px;
+}
+
+.hmcts-pagination__item--next .hmcts-pagination__link:after {
+  background-position: -11px -18px;
+  content: "";
+  margin-left: 10px;
+}
+
+.hmcts-pagination__link {
+  display: block;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  min-width: 25px;
+}
+
+.hmcts-pagination__link:link,
+.hmcts-pagination__link:visited {
+  color: #005ea5;
+}
+
+.hmcts-pagination__link:hover {
+  color: #2b8cc4;
+}
+
+.hmcts-pagination__link:focus {
+  color: #0b0c0c;
+}
+
+.hmcts-pagination__results {
+  padding: 5px;
+}
+
+.dgu-metadata__box--in-dataset {
+  background: #f8f8f8;
+  padding: 25px 30px 15px 30px;
+}
