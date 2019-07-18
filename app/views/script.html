@@ -1,24 +1,38 @@
 <script>
-  let shadesEl = document.querySelector('.hmcts-filter');
-  let coolButton = document.querySelector('.btn-apply-filter');
-  let selButton = document.querySelector('.app-c-option-select__button');
+  let mspFilterBlock = document.querySelector('.msp-filter');
 
-  coolButton.addEventListener('click', function () {
-    shadesEl.classList.toggle('hmcts-hidden');
-    document.getElementById('hmcts-filter').focus();
+  let mspFilterOpenBtn = document.querySelector('.btn-apply-filter');
+
+  mspFilterOpenBtn.addEventListener('click', function () {
+    if (mspFilterOpenBtn.innerHTML=="Zavřít filtr") mspFilterOpenBtn.innerHTML = "Zobrazit filtr";
+    else mspFilterOpenBtn.innerHTML = "Zavřít filtr";
+    mspFilterBlock.classList.toggle('msp-hidden');
+    // document.getElementById('msp-filter').focus();
   });
 
-  let closeButton = document.querySelector('.hmcts-filter__close');
+  let mspFilterCloseBtn = document.querySelector('.msp-filter__close');
 
-  closeButton.addEventListener('click', function () {
-    shadesEl.classList.toggle('hmcts-hidden');
-    document.getElementById('hmcts-filter').focus();
+  mspFilterCloseBtn.addEventListener('click', function () {
+    if (mspFilterOpenBtn.innerHTML=="Zavřít filtr") mspFilterOpenBtn.innerHTML = "Zobrazit filtr";
+    else mspFilterOpenBtn.innerHTML = "Zavřít filtr";
+    mspFilterBlock.classList.toggle('msp-hidden');
   });
+
+  let selOrganizationBtn = document.getElementById('option-select-title-organisation');
+  let selJudgeBtn = document.getElementById('option-select-title-judge');
+  let selCategoryBtn = document.getElementById('option-select-title-category');
 
   let selectButton = document.querySelector('.app-c-option-select');
 
-  selButton.addEventListener('click', function () {
-    selectButton.classList.toggle('js-closed');
-    document.getElementById('app-c-option-select').focus();
+  selOrganizationBtn.addEventListener('click', function () {
+    this.parentNode.classList.toggle('js-closed');
+  });
+
+  selJudgeBtn.addEventListener('click', function () {
+    this.parentNode.classList.toggle('js-closed');
+  });
+
+  selCategoryBtn.addEventListener('click', function () {
+    this.parentNode.classList.toggle('js-closed');
   });
   </script>

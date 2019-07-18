@@ -8,117 +8,17 @@
   {% from "back-link/macro.njk" import govukBackLink %}
 
   {{ govukBackLink({
-    "href": "/filter"
+    "href": "/court-case"
   }) }}
 {% endblock %}
 
 {% block content %}
 
-<section class="meta-data">
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l" property="dc:title">
-        Rozhodnutí ve věci XXX
-      </h1>
-    </div>
-  </div>
+<h1 class="govuk-heading-xl">
+  Rozsudek ve věci XXX
+</h1>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <div class="govuk-dgu-metadata__box dgu-metadata__box--in-dataset">
-        {% from "summary-list/macro.njk" import govukSummaryList %}
-
-        {{ govukSummaryList({
-          "classes": "govuk-summary-list--no-border",
-          "rows": [
-            {
-              "key": {
-                "text": "Soudce"
-              },
-              "value": {
-                "text": "Jan Novák"
-              }
-            },
-            {
-              "key": {
-                "text": "Soud"
-              },
-              "value": {
-                "text": "Krajský soud v Brně"
-              }
-            },
-            {
-              "key": {
-                "text": "Spisová značka"
-              },
-              "value": {
-                "text": "49Co 265/2001"
-              }
-            },
-            {
-              "key": {
-                "text": "ECLI"
-              },
-              "value": {
-                "text": "ECLI:CZ:KSBR:2003:49.CO.265.2001.1"
-              }
-            },
-            {
-              "key": {
-                "text": "Datum rozhodnutí"
-              },
-              "value": {
-                "text": "08/01/2003"
-              }
-            },
-            {
-              "key": {
-                "text": "Forma rozhodnutí"
-              },
-              "value": {
-                "text": "Rozsudek"
-              }
-            },
-            {
-              "key": {
-                "text": "Heslo"
-              },
-              "value": {
-                "html": "<p class=\"govuk-body\">\n  Rozsudek pro uznání</p>\n <p class=\"govuk-body\">\n  Řízení o odvolání</p>\n <p class=\"govuk-body\">\n  Řízení před soudem</p>\n"
-              }
-            },
-            {
-              "key": {
-                "text": "Dotčené předpisy"
-              },
-              "value": {
-                "html": "<p class=\"govuk-body\">\n  § 114b předpisu č. 99/1963Sb. ve znění do 31.12.2002</p>\n <p class=\"govuk-body\">\n  § 153a odst. 3 předpisu č. 99/1963Sb. ve znění do 31.12.2002</p>\n <p class=\"govuk-body\">\n  § 205b předpisu č. 99/1963Sb. ve znění do 31.12.2002</p>\n"
-              }
-            },
-            {
-              "key": {
-                "text": "Kategorie rozhodnutí"
-              },
-              "value": {
-                "text": "C"
-              }
-            }
-          ]
-        }) }}
-
-        <h3 class="govuk-heading-s">
-          Právní věta
-        </h3>
-        <p class="govuk-fold-outer">
-          <div class="govuk-js-summary" property="dc:description">
-            <p>Řízení, jehož předmětem je odškodnění nemoci z povolání, je řízením ve věci, jejíž povaha vyžaduje kvalifikovanou výzvu k písemnému vyjádření podle § 114b odst. 1 o.s.ř. Jestliže rozsudek pro uznání odvolací soud přezkoumává jen z důvodů uvedených v § 205b o.s.ř., nelze v odvolacím řízení přihlédnout k uspokojení uplatněného nároku (zaplacení žalované částky), k němuž došlo po vydání napadeného rozsudku pro uznání tato skutečnost však může být důvodem pro zastavení nařízené exekuce podle § 268 odst. 1 písm. g) o.s.ř.</p>
-
-          </div>
-          {% from "details/macro.njk" import govukDetails %}
-
-          {{ govukDetails({
-            "summaryText": "Zobrazit rozsudek případu",
-            "text": "R O Z S U D E K
+R O Z S U D E K
 
 J M É N E M R E P U B L I K Y
 
@@ -179,69 +79,5 @@ V Brně dne 8. ledna 2003
 
 
 předseda senátu."
-          }) }}
-        </p>
-      </div>
-
-      <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--m">
-
-      <section class="gem-c-attachment govuk-!-padding-top-5 govuk-!-padding-bottom-5">
-        <h2 class="govuk-heading-m">Soubory ke stažení</h2>
-        <div class="gem-c-attachment__details">
-          <span class="gem-c-attachment-link">
-            <a class="govuk-link" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/259634/temporary-snow-ploughs.pdf">Rozsudek ve věci XXX</a>
-
-            (<span class="gem-c-attachment-link__attribute"><abbr title="Portable Document Format" class="gem-c-attachment-link__abbr">PDF</abbr></span>, <span class="gem-c-attachment-link__attribute">19.5 KB</span>, <span class="gem-c-attachment-link__attribute">1 strana</span>)
-          </span>
-      </section>
-    </div>
-  
-    <div class="govuk-grid-column-one-third">
-      <aside class="app-related-items govuk-!-padding-bottom-5" role="complementary">
-        <h2 class="govuk-heading-s" id="subsection-title">
-          Více k obsahu
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li class="gem-c-related-navigation__link">
-              <a class="govuk-link" href="#">Všechna rozhodnutí tohoto soudce</a>
-            </li>
-            <li class="gem-c-related-navigation__link">
-              <a class="govuk-link" href="#">Všechna rozhodnutí tohoto soudu</a>
-          </ul>
-        </nav>
-        
-      </aside>
-
-      <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-s" id="subsection-title">
-          Kontakty
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li class="gem-c-related-navigation__link">
-              <a class="govuk-link" href="#">Kontakt na soud</a>
-            </li>
-            <li class="gem-c-related-navigation__link">
-              <a class="govuk-link" href="#">Zobrazit profil soudce (rejč)</a>
-          </ul>
-        </nav>
-
-        <h2 class="govuk-heading-s govuk-!-padding-top-5">Hledat rozhodnutí</h2>
-        <div class="gem-c-search gem-c-search--on-white" data-module="gem-toggle-input-class-on-focus">
-          <label for="search-main-7d27bf9e" class="gem-c-search__label">
-            Hledat právní větu, rozhodnutí
-          </label>
-          <div class="gem-c-search__item-wrapper">
-            <input type="search" value="" id="search-main-7d27bf9e" name="q" title="Hledat" class="gem-c-search__item gem-c-search__input js-class-toggle">
-            <div class="gem-c-search__item gem-c-search__submit-wrapper">
-              <button type="submit" class="gem-c-search__submit">Hledat</button>
-            </div>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </div>
-</section> 
 
 {% endblock %}
