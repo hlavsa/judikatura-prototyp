@@ -60,6 +60,22 @@
             Použít filtry
           </button>
 
+          {% from "checkboxes/macro.njk" import govukCheckboxes %}
+
+          {{ govukCheckboxes({
+            "name": "judikatury",
+            "items": [
+              {
+                "value": "pravni-veta",
+                "text": "Pouze rozhodnutí s právní větou"
+              },
+              {
+                "value": "evropska-smernice",
+                "text": "Pouze s evropskou směrnicí"
+              }
+            ]
+          }) }}
+
           <div class="app-c-option-select js-collapsible js-closed">
             <button class="js-container-head app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="false" id="option-select-title-organisation" aria-controls="organisations">Soud
               <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up">
@@ -174,10 +190,77 @@
 
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--s" for="keywords">
-              Hledat text rozhodnutí, právní větu
+              Spisová značka nebo <abbr title="Identifikator evrposke judikatury">ECLI</abbr>
             </label>
 
-            <input class="govuk-input" id="keywords" name="keywords" type="text">
+            <input class="govuk-input app-c-option-select__filter-input" id="keywords" name="keywords" type="text">
+          </div>
+
+
+          {% from "date-input/macro.njk" import govukDateInput %}
+
+          {{ govukDateInput({
+            id: "dob",
+            namePrefix: "dob",
+            fieldset: {
+              legend: {
+                text: "Datum rozhodnutí od a do",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "Například, 2005 nebo 21/03/2005"
+            },
+            items: [
+              {
+                name: "Rok od",
+                classes: "govuk-input--width-4",
+                autocomplete: "bday-year"
+              },
+              {
+                name: "Rok do",
+                classes: "govuk-input--width-4",
+                autocomplete: "bday-year"
+              }
+            ]
+          }) }}
+
+          {% from "date-input/macro.njk" import govukDateInput %}
+
+          {{ govukDateInput({
+            id: "dob",
+            namePrefix: "dob",
+            fieldset: {
+              legend: {
+                text: "Datum vydání od a do",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "Například, 2005 nebo 21/03/2005"
+            },
+            items: [
+              {
+                name: "Rok od",
+                classes: "govuk-input--width-4",
+                autocomplete: "bday-year"
+              },
+              {
+                name: "Rok do",
+                classes: "govuk-input--width-4",
+                autocomplete: "bday-year"
+              }
+            ]
+          }) }}
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Text rozhodnutí nebo právní větu
+            </label>
+
+            <input class="govuk-input app-c-option-select__filter-input" id="keywords" name="keywords" type="text">
           </div>
 
           <div class="govuk-form-group">
@@ -226,54 +309,8 @@
             </fieldset>
           </div>
 
-          {% from "date-input/macro.njk" import govukDateInput %}
-
-          {{ govukDateInput({
-            id: "dob",
-            namePrefix: "dob",
-            fieldset: {
-              legend: {
-                text: "Datum rozhodnutí od",
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--s"
-              }
-            },
-            hint: {
-              text: "Například, 2005 nebo 21/03/2005"
-            },
-            items: [
-              {
-                name: "year",
-                classes: "govuk-input--width-8",
-                autocomplete: "bday-year"
-              }
-            ]
-          }) }}
-
-          {{ govukDateInput({
-            id: "dob",
-            namePrefix: "dob",
-            fieldset: {
-              legend: {
-                text: "Datum rozhodnutí do",
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--s"
-              }
-            },
-            hint: {
-              text: "Například, 2005 nebo 21/03/2005"
-            },
-            items: [
-              {
-                name: "year",
-                classes: "govuk-input--width-8",
-                autocomplete: "bday-year"
-              }
-            ]
-          }) }}
-
           <div class="app-c-option-select js-collapsible js-closed">
-            <button class="js-container-head app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="false" id="option-select-title-category" aria-controls="categories">Kategorie
+            <button class="js-container-head app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="false" id="option-select-title-keyword" aria-controls="organisations">Hesla
               <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up">
                   <path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path>
               </svg>
@@ -282,27 +319,44 @@
               </svg>
             </button>
 
-            <div role="group" aria-labelledby="option-select-title-category" class="app-c-option-select__container js-options-container" id="categories" tabindex="-1">
+            <div class="app-c-option-select__filter">
+              <label for="input-6e89931e" class="govuk-label govuk-visually-hidden">
+                Filtrování hesel
+              </label>
+              <input name="option-select-filter" id="input-6e89931e" class="app-c-option-select__filter-input govuk-input" type="text" aria-describedby="checkboxes-147254d1-count" aria-controls="checkboxes-147254d1">
+            </div>
+
+            <div role="group" aria-labelledby="option-select-title-keyword" class="app-c-option-select__container js-options-container" id="keywords" tabindex="-1">
               <div class="app-c-option-select__container-inner js-auto-height-inner">
                 <span id="checkboxes-147254d1-count" class="app-c-option-select__count govuk-visually-hidden" aria-live="polite" data-single="option found" data-multiple="options found" data-selected="selected"></span>
 
                 <div id="checkboxes-147254d1" class="gem-c-checkboxes govuk-form-group" data-module="checkboxes">
                   <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Kategorie rozhodnutí</legend>
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Hesla</legend>
                     <ul class="govuk-checkboxes gem-c-checkboxes__list govuk-checkboxes--small">
                       <li class="govuk-checkboxes__item">
-                       <input type="checkbox" name="categories[]" id="categories-academy-for-social-justice" value="academy-for-social-justice" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Academy for Social Justice" data-controls="js-search-results-info" aria-controls="js-search-results-info">
-                        <label for="categories-academy-for-social-justice" class="govuk-label govuk-checkboxes__label">A</label>
+                       <input type="checkbox" name="keywords[]" id="keywords-academy-for-social-justice" value="academy-for-social-justice" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Academy for Social Justice" data-controls="js-search-results-info" aria-controls="js-search-results-info">
+                        <label for="keywords-academy-for-social-justice" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
                       </li>
 
                       <li class="govuk-checkboxes__item">
-                        <input type="checkbox" name="categories[]" id="categories-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
-                        <label for="categories-accelerated-access-review" class="govuk-label govuk-checkboxes__label">B</label>
+                        <input type="checkbox" name="keywords[]" id="keywords-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
+                        <label for="keywords-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
                       </li>
 
                       <li class="govuk-checkboxes__item">
-                        <input type="checkbox" name="categories[]" id="categories-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
-                        <label for="categories-accelerated-access-review" class="govuk-label govuk-checkboxes__label">C</label>
+                        <input type="checkbox" name="keywords[]" id="keywords-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
+                        <label for="keywords-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
+                      </li>
+
+                      <li class="govuk-checkboxes__item">
+                        <input type="checkbox" name="keywords[]" id="keywords-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
+                        <label for="keywords-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
+                      </li>
+
+                      <li class="govuk-checkboxes__item">
+                        <input type="checkbox" name="keywords[]" id="judges-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
+                        <label for="judges-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
                       </li>
                     </ul>
                   </fieldset>
@@ -341,6 +395,164 @@
     </div>
 
     <div class="js-results">
+      {% from "table/macro.njk" import govukTable %}
+
+      {{ govukTable({
+        "head": [
+          {
+            "text": "Spisová značka",
+            "classes": "govuk-body-s"
+          },
+          {
+            "text": "Soud",
+            "classes": "govuk-body-s"
+          },
+          {
+            "text": "Soudce",
+            "classes": "govuk-body-s"
+          }
+          ,
+          {
+            "text": "Datum rozhodnutí",
+            "classes": "govuk-body-s"
+          }
+        ],
+        "rows": [
+          [
+            {
+              "text": "53Cm 36/2001",
+              "classes": "govuk-body-s"
+            },
+            {
+              "text": "Městský soud v Praze",
+              "classes": "govuk-body-s"
+            },
+            {
+              "text": "Jan Novák",
+              "classes": "govuk-body-s"
+            }
+            ,
+            {
+              "text": "9. července 2019",
+              "classes": "govuk-body-s"
+            }
+          ],
+          [
+            {
+              "text": "53Cm 36/2001",
+              "classes": "govuk-body-s"
+            },
+            {
+              "text": "Městský soud v Praze",
+              "classes": "govuk-body-s"
+            },
+            {
+              "text": "Jan Novák",
+              "classes": "govuk-body-s"
+            }
+            ,
+            {
+              "text": "9. července 2019",
+              "classes": "govuk-body-s"
+            }
+          ],
+          [
+            {
+              "text": "53Cm 36/2001",
+              "classes": "govuk-body-s"
+            },
+            {
+              "text": "Městský soud v Praze",
+              "classes": "govuk-body-s"
+            },
+            {
+              "text": "Jan Novák",
+              "classes": "govuk-body-s"
+            }
+            ,
+            {
+              "text": "9. července 2019",
+              "classes": "govuk-body-s"
+            }
+          ],
+          [
+            {
+              "text": "53Cm 36/2001",
+              "classes": "govuk-body-s"
+            },
+            {
+              "text": "Městský soud v Praze",
+              "classes": "govuk-body-s"
+            },
+            {
+              "text": "Jan Novák",
+              "classes": "govuk-body-s"
+            }
+            ,
+            {
+              "text": "9. července 2019",
+              "classes": "govuk-body-s"
+            }
+          ],
+          [
+            {
+              "text": "53Cm 36/2001",
+              "classes": "govuk-body-s"
+            },
+            {
+              "text": "Městský soud v Praze",
+              "classes": "govuk-body-s"
+            },
+            {
+              "text": "Jan Novák",
+              "classes": "govuk-body-s"
+            }
+            ,
+            {
+              "text": "9. července 2019",
+              "classes": "govuk-body-s"
+            }
+          ],
+          [
+            {
+              "text": "53Cm 36/2001",
+              "classes": "govuk-body-s"
+            },
+            {
+              "text": "Městský soud v Praze",
+              "classes": "govuk-body-s"
+            },
+            {
+              "text": "Jan Novák",
+              "classes": "govuk-body-s"
+            }
+            ,
+            {
+              "text": "9. července 2019",
+              "classes": "govuk-body-s"
+            }
+          ],
+          [
+            {
+              "text": "53Cm 36/2001",
+              "classes": "govuk-body-s"
+            },
+            {
+              "text": "Městský soud v Praze",
+              "classes": "govuk-body-s"
+            },
+            {
+              "text": "Jan Novák",
+              "classes": "govuk-body-s"
+            }
+            ,
+            {
+              "text": "9. července 2019",
+              "classes": "govuk-body-s"
+            }
+          ]
+        ]
+      }) }}
       <ul class="finder-results js-finder-results">
         <li class="document"> 
           <a href="/court-case" class="document__link">
