@@ -174,6 +174,7 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 }
 
 .msp-filter__close {
+  display: block;
     color: #0b0c0c;
     cursor: pointer;
     background-color: transparent;
@@ -227,6 +228,7 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
         font-size: 19px;
         font-size: 1.1875rem;
         line-height: 1.31579;
+        display: none;
     }
 }
 
@@ -703,23 +705,14 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 }
 
 .app-back-to-top {
-    display: none;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
-
-@media (min-width: 40.0625em) {
-  .app-back-to-top {
-    display: block;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 30px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-  .app-back-to-top a,
-  .app-back-to-top a:link,
-  .app-back-to-top a:visited {
-      color: #2e358b;
-  }
+.app-back-to-top a,
+.app-back-to-top a:link,
+.app-back-to-top a:visited {
+    color: #2e358b;
 }
 
 .app-back-to-top__icon {
@@ -870,19 +863,119 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
   padding: 25px 30px 15px 30px;
 }
 
-.entire-decision p a {
-  text-decoration: none;
-}
-
-.entire-decision p a strong {
-  text-decoration: underline;
-}
-
-.entire-decision p a span {
-  color: #6f777b;
-  padding-left: 10px;
-}
-
 .document-metadata__label, .document-metadata__value, .gem-c-attachment__details {
   font-family: $govuk-font-family;
+}
+
+.app-related-items {
+  color: #0b0c0c;
+  border-top: 2px solid #0b0c0c;
+}
+
+.govuk-table__header {
+    font-weight: 700;
+}
+
+.govuk-table__header,
+.govuk-table__cell {
+    padding: 10px 20px 10px 0;
+    border-bottom: 1px solid #b1b4b6;
+    text-align: left;
+    vertical-align: top;
+}
+
+.govuk-table__cell--numeric {
+    font-feature-settings: "tnum" 1;
+    font-weight: 400;
+}
+
+@media print {
+    .govuk-table__cell--numeric {
+        font-family: sans-serif;
+    }
+}
+
+.govuk-table__header--numeric,
+.govuk-table__cell--numeric {
+    text-align: right;
+}
+
+.govuk-table__header:last-child,
+.govuk-table__cell:last-child {
+    padding-right: 0;
+}
+
+.govuk-visually-hidden {
+    position: absolute!important;
+    width: 1px!important;
+    height: 1px!important;
+    margin: 0!important;
+    padding: 0!important;
+    overflow: hidden!important;
+    clip: rect(0 0 0 0)!important;
+    -webkit-clip-path: inset(50%)!important;
+    clip-path: inset(50%)!important;
+    border: 0!important;
+    white-space: nowrap!important;
+}
+
+[aria-sort] button,
+[aria-sort] button:hover {
+    background-color: transparent;
+    border-width: 0;
+    -webkit-box-shadow: 0 0 0 0;
+    -moz-box-shadow: 0 0 0 0;
+    box-shadow: 0 0 0 0;
+    color: #005ea5;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    padding: 0 10px 0 0;
+    position: relative;
+    text-align: inherit;
+    font-size: 1em;
+    margin: 0;
+}
+
+[aria-sort] button:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #ffdd00;
+    box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+
+[aria-sort]:first-child button {
+    right: auto;
+}
+
+[aria-sort] button:before {
+    content: " \25bc";
+    position: absolute;
+    right: -1px;
+    top: 9px;
+    font-size: 0.5em;
+}
+
+[aria-sort] button:after {
+    content: " \25b2";
+    position: absolute;
+    right: -1px;
+    top: 1px;
+    font-size: 0.5em;
+}
+
+[aria-sort="ascending"] button:before {
+    content: none;
+}
+
+[aria-sort="ascending"] button:after {
+    content: " \25b2";
+    font-size: .8em;
+    position: absolute;
+    right: -5px;
+    top: 2px;
 }

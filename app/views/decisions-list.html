@@ -4,26 +4,22 @@
   justice - judikatura prototyp
 {% endblock %}
 
-{% block beforeContent %}
-  {% from "back-link/macro.njk" import govukBackLink %}
-
-  {{ govukBackLink({
-    "href": "/"
-  }) }}
-{% endblock %}
-
 {% block content %}
 
-<h1 class="govuk-heading-xl">
-  Vyhledat rozhodnutí a judikaturu nejvyšších a krajských soudů v2
-</h1>
+<div class="govuk-grid-row">
+  <header class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      Vyhledat rozhodnutí a judikaturu vrchních, krajských a okresních soudů
+    </h1>
+  </header>
+</div>
 
 <div class="msp-filter-layout">
   <div class="msp-filter-layout__filter">
     <div class="msp-filter" id="msp-filter" tabindex="-1">
       <div class="msp-filter__header">
         <div class="msp-filter__header-title">
-          <h2 class="govuk-heading-m">Filtr</h2>
+          <h2 class="govuk-heading-s">Filtrovat rozhodnutí</h2>
         </div>
 
         <div class="msp-filter__header-action">
@@ -43,10 +39,10 @@
             </div>
           </div>
 
-          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Kategorie rozhodnutí</h3>
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Soud</h3>
           <ul class="msp-filter-tags">
-            <li><a class="msp-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Odstranit tento filtr</span> A</a></li>
-            <li><a class="msp-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Odstranit tento filtr</span> B</a></li>
+            <li><a class="msp-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Odstranit tento filtr</span> Městský soud v Praze</a></li>
+            <li><a class="msp-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Odstranit tento filtr</span> Městský soud v Praze</a></li>
           </ul>
 
           <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Úsek soudu</h3>
@@ -71,7 +67,7 @@
               },
               {
                 "value": "evropska-smernice",
-                "text": "Pouze s evropskou směrnicí"
+                "text": "Pouze rozhodnutí s evropskou směrnicí"
               }
             ]
           }) }}
@@ -99,31 +95,31 @@
 
                 <div id="checkboxes-147254d1" class="gem-c-checkboxes govuk-form-group" data-module="checkboxes">
                   <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Soudyc</legend>
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Soudci</legend>
                     <ul class="govuk-checkboxes gem-c-checkboxes__list govuk-checkboxes--small">
                       <li class="govuk-checkboxes__item">
-                       <input type="checkbox" name="organisations[]" id="organisations-academy-for-social-justice" value="academy-for-social-justice" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Academy for Social Justice" data-controls="js-search-results-info" aria-controls="js-search-results-info">
-                        <label for="organisations-academy-for-social-justice" class="govuk-label govuk-checkboxes__label">Městský soud v Praze</label>
+                       <input type="checkbox" name="organisations[]" id="organisations-mestsky-soud-praha" value="mestsky-soud-praha" class="govuk-checkboxes__input">
+                        <label for="organisations-mestsky-soud-praha" class="govuk-label govuk-checkboxes__label">Městský soud v Praze</label>
                       </li>
                       
                       <li class="govuk-checkboxes__item">
-                        <input type="checkbox" name="organisations[]" id="organisations-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
-                        <label for="organisations-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Městský soud v Praze</label>
+                        <input type="checkbox" name="organisations[]" id="organisations-krajsky-soud-brno" value="krajsky-soud-brno" class="govuk-checkboxes__input">
+                        <label for="organisations-krajsky-soud-brno" class="govuk-label govuk-checkboxes__label">Krajský soud v Brně</label>
                       </li>
 
                       <li class="govuk-checkboxes__item">
-                        <input type="checkbox" name="organisations[]" id="organisations-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
-                        <label for="organisations-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Městský soud v Praze</label>
+                        <input type="checkbox" name="organisations[]" id="organisations-krajsky-soud-ceskebudjovice" value="krajsky-soud-ceskebudjovice" class="govuk-checkboxes__input">
+                        <label for="organisations-krajsky-soud-ceskebudjovice" class="govuk-label govuk-checkboxes__label">Krajský soud v Českých Budějovicích</label>
                       </li>
 
                       <li class="govuk-checkboxes__item">
-                        <input type="checkbox" name="organisations[]" id="organisations-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
-                        <label for="organisations-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Městský soud v Praze</label>
+                        <input type="checkbox" name="organisations[]" id="organisations-krajsky-soud-hradeckralove" value="krajsky-soud-hradeckralove" class="govuk-checkboxes__input">
+                        <label for="organisations-krajsky-soud-hradeckralove" class="govuk-label govuk-checkboxes__label">Krajský soud v Hradci Králové</label>
                       </li>
 
                       <li class="govuk-checkboxes__item">
-                        <input type="checkbox" name="organisations[]" id="organisations-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
-                        <label for="organisations-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Městský soud v Praze</label>
+                        <input type="checkbox" name="organisations[]" id="organisations-krajsky-soud-ostrava" value="krajsky-soud-ostrava" class="govuk-checkboxes__input">
+                        <label for="organisations-krajsky-soud-ostrava" class="govuk-label govuk-checkboxes__label">Krajský soud v Ostravě</label>
                       </li>
                     </ul>
                   </fieldset>
@@ -158,28 +154,28 @@
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Soudci</legend>
                     <ul class="govuk-checkboxes gem-c-checkboxes__list govuk-checkboxes--small">
                       <li class="govuk-checkboxes__item">
-                       <input type="checkbox" name="judges[]" id="judges-academy-for-social-justice" value="academy-for-social-justice" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Academy for Social Justice" data-controls="js-search-results-info" aria-controls="js-search-results-info">
-                        <label for="judges-academy-for-social-justice" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
+                       <input type="checkbox" name="judges[]" id="judges-jan-novak" value="jan-novak" class="govuk-checkboxes__input">
+                        <label for="judges-jan-novak" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
                       </li>
 
                       <li class="govuk-checkboxes__item">
-                        <input type="checkbox" name="judges[]" id="judges-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
-                        <label for="judges-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
+                        <input type="checkbox" name="judges[]" id="judges-jan-novak" value="jan-novak" class="govuk-checkboxes__input">
+                        <label for="judges-jan-novak" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
                       </li>
 
                       <li class="govuk-checkboxes__item">
-                        <input type="checkbox" name="judges[]" id="judges-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
-                        <label for="judges-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
+                        <input type="checkbox" name="judges[]" id="judges-jan-novak" value="jan-novak" class="govuk-checkboxes__input">
+                        <label for="judges-jan-novak" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
                       </li>
 
                       <li class="govuk-checkboxes__item">
-                        <input type="checkbox" name="judges[]" id="judges-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
-                        <label for="judges-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
+                        <input type="checkbox" name="judges[]" id="judges-jan-novak" value="jan-novak" class="govuk-checkboxes__input">
+                        <label for="judges-jan-novak" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
                       </li>
 
                       <li class="govuk-checkboxes__item">
-                        <input type="checkbox" name="judges[]" id="judges-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
-                        <label for="judges-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
+                        <input type="checkbox" name="judges[]" id="judges-jan-novak" value="jan-novak" class="govuk-checkboxes__input">
+                        <label for="judges-jan-novak" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
                       </li>
                     </ul>
                   </fieldset>
@@ -210,16 +206,16 @@
               }
             },
             hint: {
-              text: "Například, 2005 nebo 21/03/2005"
+              text: "Například, 2005 nebo 21.03.2005"
             },
             items: [
               {
-                name: "Rok od",
+                name: "Od",
                 classes: "govuk-input--width-4",
                 autocomplete: "bday-year"
               },
               {
-                name: "Rok do",
+                name: "Do",
                 classes: "govuk-input--width-4",
                 autocomplete: "bday-year"
               }
@@ -239,16 +235,16 @@
               }
             },
             hint: {
-              text: "Například, 2005 nebo 21/03/2005"
+              text: "Například, 2005 nebo 21.03.2005"
             },
             items: [
               {
-                name: "Rok od",
+                name: "Od",
                 classes: "govuk-input--width-4",
                 autocomplete: "bday-year"
               },
               {
-                name: "Rok do",
+                name: "Do",
                 classes: "govuk-input--width-4",
                 autocomplete: "bday-year"
               }
@@ -257,9 +253,8 @@
 
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--s" for="keywords">
-              Text rozhodnutí nebo právní větu
+              Text rozhodnutí nebo právní věta
             </label>
-
             <input class="govuk-input app-c-option-select__filter-input" id="keywords" name="keywords" type="text">
           </div>
 
@@ -270,15 +265,15 @@
               </legend>
               <div class="govuk-radios govuk-radios--small">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="status-1" name="status" type="radio" value="1" checked>
-                  <label class="govuk-label govuk-radios__label" for="status-1">
+                  <input class="govuk-radios__input" id="judgement-sentence" name="sentence" type="radio" value="jsen">
+                  <label class="govuk-label govuk-radios__label" for="judgement-sentence">
                     Rozsudek
                   </label>
                 </div>
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="status-2" name="status" type="radio" value="2">
-                  <label class="govuk-label govuk-radios__label" for="status-2">
+                  <input class="govuk-radios__input" id="judgement-decision" name="decision" type="radio" value="jdec">
+                  <label class="govuk-label govuk-radios__label" for="judgement-decision">
                     Usnesení
                   </label>
                 </div>
@@ -293,15 +288,15 @@
               </legend>
               <div class="govuk-radios govuk-radios--small">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="status-3" name="status" type="radio" value="3" checked>
-                  <label class="govuk-label govuk-radios__label" for="status-3">
+                  <input class="govuk-radios__input" id="type-civil" name="civil" type="radio" value="tciv" checked>
+                  <label class="govuk-label govuk-radios__label" for="type-civil">
                     Civilní úsek
                   </label>
                 </div>
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="status-4" name="status" type="radio" value="4">
-                  <label class="govuk-label govuk-radios__label" for="status-4">
+                  <input class="govuk-radios__input" id="type-criminal" name="criminal" type="radio" value="tcrim">
+                  <label class="govuk-label govuk-radios__label" for="type-criminal">
                     Trestní úsek
                   </label>
                 </div>
@@ -335,28 +330,28 @@
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Hesla</legend>
                     <ul class="govuk-checkboxes gem-c-checkboxes__list govuk-checkboxes--small">
                       <li class="govuk-checkboxes__item">
-                       <input type="checkbox" name="keywords[]" id="keywords-academy-for-social-justice" value="academy-for-social-justice" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Academy for Social Justice" data-controls="js-search-results-info" aria-controls="js-search-results-info">
-                        <label for="keywords-academy-for-social-justice" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
+                       <input type="checkbox" name="keywords[]" id="keywords-abolice" value="abolice" class="govuk-checkboxes__input">
+                        <label for="keywords-abolice" class="govuk-label govuk-checkboxes__label">Abolice</label>
                       </li>
 
                       <li class="govuk-checkboxes__item">
-                        <input type="checkbox" name="keywords[]" id="keywords-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
-                        <label for="keywords-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
+                        <input type="checkbox" name="keywords[]" id="keywords-absolutni-majetkova-prava" value="absolutni-majetkova-prava" class="govuk-checkboxes__input">
+                        <label for="keywords-absolutni-majetkova-prava" class="govuk-label govuk-checkboxes__label">Aboslutní majetková práva (o.z.)</label>
                       </li>
 
                       <li class="govuk-checkboxes__item">
-                        <input type="checkbox" name="keywords[]" id="keywords-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
-                        <label for="keywords-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
+                        <input type="checkbox" name="keywords[]" id="keywords-actio-libera-in-causa" value="actio-libera-in-causa" class="govuk-checkboxes__input">
+                        <label for="keywords-actio-libera-in-causa" class="govuk-label govuk-checkboxes__label">Actio libera in causa</label>
                       </li>
 
                       <li class="govuk-checkboxes__item">
-                        <input type="checkbox" name="keywords[]" id="keywords-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
-                        <label for="keywords-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
+                        <input type="checkbox" name="keywords[]" id="keywords-adhezni-rizeni" value="adhezni-rizeni" class="govuk-checkboxes__input">
+                        <label for="keywords-adhezni-rizeni" class="govuk-label govuk-checkboxes__label">Adhezní řízení</label>
                       </li>
 
                       <li class="govuk-checkboxes__item">
-                        <input type="checkbox" name="keywords[]" id="judges-accelerated-access-review" value="accelerated-access-review" class="govuk-checkboxes__input" data-track-category="filterClicked" data-uncheck-track-category="filterRemoved" data-track-action="Organisation" data-track-label="Accelerated Access Review (AAR)" data-controls="js-search-results-info" aria-controls="js-search-results-info">
-                        <label for="judges-accelerated-access-review" class="govuk-label govuk-checkboxes__label">Jan Novák</label>
+                        <input type="checkbox" name="keywords[]" id="keywords-adopce" value="adopce" class="govuk-checkboxes__input">
+                        <label for="keywords-adopce" class="govuk-label govuk-checkboxes__label">Adopce</label>
                       </li>
                     </ul>
                   </fieldset>
@@ -364,6 +359,53 @@
               </div>
             </div>
           </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Dotčené předpisy
+              </legend>
+              {% from "radios/macro.njk" import govukRadios %}
+
+              {{ govukRadios({
+                "idPrefix": "instruments",
+                "name": "instruments",
+                "formGroup": {
+                  "classes": "govuk-radios--small"
+                },
+                "items": [
+                  {
+                    "value": "sb",
+                    "text": "Sbírka",
+                    "conditional": {
+                      "html": "<label class=\"govuk-label\" for=\"sb-article\">Článek</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"sb-article\" type=\"text\" id=\"sb-article\">\n<label class=\"govuk-label\" for=\"sb-section\">Paragraf §</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"sb-section\" type=\"text\" id=\"sb-section\">\n<label class=\"govuk-label\" for=\"sb-subsection\">Odstavec</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"sb-subsection\" type=\"text\" id=\"sb-subsection\">\n<label class=\"govuk-label\" for=\"sb-number\">Číslo předpisu</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"sb-number\" type=\"text\" id=\"sb-number\">\n<label class=\"govuk-label\" for=\"sb-year\">Rok Sbírky</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"sb-year\" type=\"text\" id=\"sb-year\">\n"
+                    }
+                  },
+                  {
+                    "value": "sbms",
+                    "text": "Sbírka mezinárodních smluv",
+                    "conditional": {
+                      "html": "<label class=\"govuk-label\" for=\"sbms-article\">Článek</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"sbms-article\" type=\"text\" id=\"sbms-article\">\n<label class=\"govuk-label\" for=\"sbms-section\">Odstavec</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"sbms-section\" type=\"text\" id=\"sbms-section\">\n<label class=\"govuk-label\" for=\"sbms-section\">Úmluva</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"sbms-email\" type=\"text\" id=\"sbms-email\">\n<label class=\"govuk-label\" for=\"sbms-email\" aria-label=\"Sbírky mezinárodních smluv\">Rok Sb.ms.</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"sbms-email\" type=\"text\" id=\"sbms-email\">\n"
+                    }
+                  },
+                  {
+                    "value": "neu",
+                    "text": "Nařízení EU",
+                    "conditional": {
+                      "html": "<label class=\"govuk-label\" for=\"neu-article\">Článek</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"neu-article\" type=\"text\" id=\"neu-article\">\n<label class=\"govuk-label\" for=\"neu-section\">Odstavec</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"neu-section\" type=\"text\" id=\"neu-section\">\n<label class=\"govuk-label\" for=\"neu-number\">Nařízení číslo</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"neu-number\" type=\"text\" id=\"neu-number\">\n<label class=\"govuk-label\" for=\"neu-year\">Rok Nařízení EU</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"neu-year\" type=\"text\" id=\"neu-year\">\n"
+                    }
+                  },
+                  {
+                    "value": "seu",
+                    "text": "Směrnice EU",
+                    "conditional": {
+                      "html": "<label class=\"govuk-label\" for=\"seu-article\">Článek</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"seu-article\" type=\"text\" id=\"seu-article\">\n<label class=\"govuk-label\" for=\"seu-section\">Odstavec</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"seu-section\" type=\"text\" id=\"seu-section\">\n<label class=\"govuk-label\" for=\"seu-directive\">Směrnice</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"seu-directive\" type=\"text\" id=\"seu-directive\">\n<label class=\"govuk-label\" for=\"seu-year\">Rok Směrnice EU</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"seu-year\" type=\"text\" id=\"seu-year\">\n"
+                    }
+                  }
+                ]
+              }) }}
+            </fieldset>
+          </div>          
         </div>
       </div>
     </div>
@@ -377,7 +419,7 @@
       </div>
 
       <div class="">
-        <h2 class="govuk-heading-s">3 000 výsledků</h2>
+        <h2 class="govuk-heading-s">Celkový počet rozhodnutí: 3000</h2>
       </div>
     </div>
 
@@ -386,261 +428,146 @@
     <div id="js-sort-options">
       <div class="govuk-form-group">
         <label for="order" class="result-region-header__sort-label govuk-label">Seřadit podle</label>
-        <select class="js-order-results govuk-select" name="order" id="order" aria-controls="js-search-results-info" data-default-sort-option="updated-newest" data-relevance-sort-option="relevance" data-module="track-select-change">
-            <option value="most-viewed" selected="" data-track-category="dropDownClicked" data-track-action="clicked" data-track-label="Most viewed">Nejnavštěvovanější</option>
+        <select class="js-order-results govuk-select" name="order" id="order" aria-controls="js-search-results-info">
             <option value="updated-newest" data-track-category="dropDownClicked" data-track-action="clicked" data-track-label="Updated (newest)">Aktualizováno (nejnovější)</option>
             <option value="updated-oldest" data-track-category="dropDownClicked" data-track-action="clicked" data-track-label="Updated (oldest)">Aktualizováno (nejstarší)</option>
         </select>
       </div>
     </div>
+    
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-body-s" aria-sort="ascending">
+              <button type="button" data-index="0">Spisová značka</button>
+          </th>
+          <th scope="col" class="govuk-table__header govuk-body-s" aria-sort="none">
+              <button type="button" data-index="1">Soud</button>
+          </th>
+          <th scope="col" class="govuk-table__header govuk-body-s" aria-sort="none">
+              <button type="button" data-index="2">Soudce</button>
+          </th>
+          <th scope="col" class="govuk-table__header govuk-body-s" aria-sort="none">
+              <button type="button" data-index="2">Datum rozhodnutí</button>
+          </th>
+        </tr>
+      </thead>
 
-    <div class="js-results">
-      {% from "table/macro.njk" import govukTable %}
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body-s"><a href="/court-case"><span class="govuk-visually-hidden">Přejít na rozsudek spisové značky </span>53 Cm 36/2001</a></td>
+          <td class="govuk-table__cell govuk-body-s">Městský soud v Praze</td>
+          <td class="govuk-table__cell govuk-body-s">Jan Novák</td>
+          <td class="govuk-table__cell govuk-body-s">9. července 2019</td>
+        </tr>
 
-      {{ govukTable({
-        "head": [
-          {
-            "text": "Spisová značka",
-            "classes": "govuk-body-s"
-          },
-          {
-            "text": "Soud",
-            "classes": "govuk-body-s"
-          },
-          {
-            "text": "Soudce",
-            "classes": "govuk-body-s"
-          }
-          ,
-          {
-            "text": "Datum rozhodnutí",
-            "classes": "govuk-body-s"
-          }
-        ],
-        "rows": [
-          [
-            {
-              "text": "53Cm 36/2001",
-              "classes": "govuk-body-s"
-            },
-            {
-              "text": "Městský soud v Praze",
-              "classes": "govuk-body-s"
-            },
-            {
-              "text": "Jan Novák",
-              "classes": "govuk-body-s"
-            }
-            ,
-            {
-              "text": "9. července 2019",
-              "classes": "govuk-body-s"
-            }
-          ],
-          [
-            {
-              "text": "53Cm 36/2001",
-              "classes": "govuk-body-s"
-            },
-            {
-              "text": "Městský soud v Praze",
-              "classes": "govuk-body-s"
-            },
-            {
-              "text": "Jan Novák",
-              "classes": "govuk-body-s"
-            }
-            ,
-            {
-              "text": "9. července 2019",
-              "classes": "govuk-body-s"
-            }
-          ],
-          [
-            {
-              "text": "53Cm 36/2001",
-              "classes": "govuk-body-s"
-            },
-            {
-              "text": "Městský soud v Praze",
-              "classes": "govuk-body-s"
-            },
-            {
-              "text": "Jan Novák",
-              "classes": "govuk-body-s"
-            }
-            ,
-            {
-              "text": "9. července 2019",
-              "classes": "govuk-body-s"
-            }
-          ],
-          [
-            {
-              "text": "53Cm 36/2001",
-              "classes": "govuk-body-s"
-            },
-            {
-              "text": "Městský soud v Praze",
-              "classes": "govuk-body-s"
-            },
-            {
-              "text": "Jan Novák",
-              "classes": "govuk-body-s"
-            }
-            ,
-            {
-              "text": "9. července 2019",
-              "classes": "govuk-body-s"
-            }
-          ],
-          [
-            {
-              "text": "53Cm 36/2001",
-              "classes": "govuk-body-s"
-            },
-            {
-              "text": "Městský soud v Praze",
-              "classes": "govuk-body-s"
-            },
-            {
-              "text": "Jan Novák",
-              "classes": "govuk-body-s"
-            }
-            ,
-            {
-              "text": "9. července 2019",
-              "classes": "govuk-body-s"
-            }
-          ],
-          [
-            {
-              "text": "53Cm 36/2001",
-              "classes": "govuk-body-s"
-            },
-            {
-              "text": "Městský soud v Praze",
-              "classes": "govuk-body-s"
-            },
-            {
-              "text": "Jan Novák",
-              "classes": "govuk-body-s"
-            }
-            ,
-            {
-              "text": "9. července 2019",
-              "classes": "govuk-body-s"
-            }
-          ],
-          [
-            {
-              "text": "53Cm 36/2001",
-              "classes": "govuk-body-s"
-            },
-            {
-              "text": "Městský soud v Praze",
-              "classes": "govuk-body-s"
-            },
-            {
-              "text": "Jan Novák",
-              "classes": "govuk-body-s"
-            }
-            ,
-            {
-              "text": "9. července 2019",
-              "classes": "govuk-body-s"
-            }
-          ]
-        ]
-      }) }}
-      <ul class="finder-results js-finder-results">
-        <li class="document"> 
-          <a href="/court-case" class="document__link">
-          Rozhodnutí ve věci XXX</a> 
-          <p>Návrh na vklad vlastnického práva do katastru nemovitostí podle smlouvy, kterou nemovitosti převádí do vlastnictví jiného osoba, která ke dni návrhu na vklad není v katastru zapsána jako vlastník převáděných nemovitostí, je třeba zamítnout pro nesplnění podmínky vkladu uvedené v § 5 odst. 1 písm. a zák. č. 265/1992 Sb., neboť navrhovanému vkladu je v takovém případě na překážku stav zápisů v katastru. Doloží-li nezapsaný převodce své oprávnění s nemovitostmi nakládat, je tím sice splněna podmínka vkladu uvedená v § 5 odst. 1 písm. e cit. zák., tj. oprávnění účastníka nakládat s předmětem právního úkonu, ale nikoli podmínka uvedená v § 5 odst. 1 písm. a cit. zák.</p> 
-          <dl class="document-metadata"> 
-            <dt class="document-metadata__label"> Rozhodl soud: </dt> 
-            <dd class="document-metadata__value"> Městský soud v Praze</dd> 
-            <dt class="document-metadata__label"> Datum rozhodnutí: </dt> 
-            <dd class="document-metadata__value"> 
-              <time datetime="2019-07-09">9. června 2019</time> 
-            </dd> 
-            <dt class="document-metadata__label"> Spisová značka: </dt> 
-            <dd class="document-metadata__value"> 53Cm 36/2001</dd> 
-          </dl> 
-        </li>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body-s"><a href="/court-case"><span class="govuk-visually-hidden">Přejít na rozsudek spisové značky </span>53 Cm 36/2001</a></td>
+          <td class="govuk-table__cell govuk-body-s">Městský soud v Praze</td>
+          <td class="govuk-table__cell govuk-body-s">Jan Novák</td>
+          <td class="govuk-table__cell govuk-body-s">9. července 2019</td>
+        </tr>
 
-        <li class="document"> 
-          <a href="/court-case" class="document__link">
-          Rozhodnutí ve věci XXX</a> 
-          <p>Návrh na vklad vlastnického práva do katastru nemovitostí podle smlouvy, kterou nemovitosti převádí do vlastnictví jiného osoba, která ke dni návrhu na vklad není v katastru zapsána jako vlastník převáděných nemovitostí, je třeba zamítnout pro nesplnění podmínky vkladu uvedené v § 5 odst. 1 písm. a zák. č. 265/1992 Sb., neboť navrhovanému vkladu je v takovém případě na překážku stav zápisů v katastru. Doloží-li nezapsaný převodce své oprávnění s nemovitostmi nakládat, je tím sice splněna podmínka vkladu uvedená v § 5 odst. 1 písm. e cit. zák., tj. oprávnění účastníka nakládat s předmětem právního úkonu, ale nikoli podmínka uvedená v § 5 odst. 1 písm. a cit. zák.</p> 
-          <dl class="document-metadata"> 
-            <dt class="document-metadata__label"> Rozhodl soud: </dt> 
-            <dd class="document-metadata__value"> Městský soud v Praze</dd> 
-            <dt class="document-metadata__label"> Datum rozhodnutí: </dt> 
-            <dd class="document-metadata__value"> 
-              <time datetime="2019-07-09">9. června 2019</time> 
-            </dd> 
-            <dt class="document-metadata__label"> Spisová značka: </dt> 
-            <dd class="document-metadata__value"> 53Cm 36/2001</dd> 
-          </dl> 
-        </li>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body-s"><a href="/court-case"><span class="govuk-visually-hidden">Přejít na rozsudek spisové značky </span>53 Cm 36/2001</a></td>
+          <td class="govuk-table__cell govuk-body-s">Městský soud v Praze</td>
+          <td class="govuk-table__cell govuk-body-s">Jan Novák</td>
+          <td class="govuk-table__cell govuk-body-s">9. července 2019</td>
+        </tr>
 
-        <li class="document"> 
-          <a href="/court-case" class="document__link">
-          Rozhodnutí ve věci XXX</a> 
-          <p>Návrh na vklad vlastnického práva do katastru nemovitostí podle smlouvy, kterou nemovitosti převádí do vlastnictví jiného osoba, která ke dni návrhu na vklad není v katastru zapsána jako vlastník převáděných nemovitostí, je třeba zamítnout pro nesplnění podmínky vkladu uvedené v § 5 odst. 1 písm. a zák. č. 265/1992 Sb., neboť navrhovanému vkladu je v takovém případě na překážku stav zápisů v katastru. Doloží-li nezapsaný převodce své oprávnění s nemovitostmi nakládat, je tím sice splněna podmínka vkladu uvedená v § 5 odst. 1 písm. e cit. zák., tj. oprávnění účastníka nakládat s předmětem právního úkonu, ale nikoli podmínka uvedená v § 5 odst. 1 písm. a cit. zák.</p> 
-          <dl class="document-metadata"> 
-            <dt class="document-metadata__label"> Rozhodl soud: </dt> 
-            <dd class="document-metadata__value"> Městský soud v Praze</dd> 
-            <dt class="document-metadata__label"> Datum rozhodnutí: </dt> 
-            <dd class="document-metadata__value"> 
-              <time datetime="2019-07-09">9. června 2019</time> 
-            </dd> 
-            <dt class="document-metadata__label"> Spisová značka: </dt> 
-            <dd class="document-metadata__value"> 53Cm 36/2001</dd> 
-          </dl> 
-        </li>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body-s"><a href="/court-case"><span class="govuk-visually-hidden">Přejít na rozsudek spisové značky </span>53 Cm 36/2001</a></td>
+          <td class="govuk-table__cell govuk-body-s">Městský soud v Praze</td>
+          <td class="govuk-table__cell govuk-body-s">Jan Novák</td>
+          <td class="govuk-table__cell govuk-body-s">9. července 2019</td>
+        </tr>
 
-        <li class="document"> 
-          <a href="/court-case" class="document__link">
-          Rozhodnutí ve věci XXX</a> 
-          <p>Návrh na vklad vlastnického práva do katastru nemovitostí podle smlouvy, kterou nemovitosti převádí do vlastnictví jiného osoba, která ke dni návrhu na vklad není v katastru zapsána jako vlastník převáděných nemovitostí, je třeba zamítnout pro nesplnění podmínky vkladu uvedené v § 5 odst. 1 písm. a zák. č. 265/1992 Sb., neboť navrhovanému vkladu je v takovém případě na překážku stav zápisů v katastru. Doloží-li nezapsaný převodce své oprávnění s nemovitostmi nakládat, je tím sice splněna podmínka vkladu uvedená v § 5 odst. 1 písm. e cit. zák., tj. oprávnění účastníka nakládat s předmětem právního úkonu, ale nikoli podmínka uvedená v § 5 odst. 1 písm. a cit. zák.</p> 
-          <dl class="document-metadata"> 
-            <dt class="document-metadata__label"> Rozhodl soud: </dt> 
-            <dd class="document-metadata__value"> Městský soud v Praze</dd> 
-            <dt class="document-metadata__label"> Datum rozhodnutí: </dt> 
-            <dd class="document-metadata__value"> 
-              <time datetime="2019-07-09">9. června 2019</time> 
-            </dd> 
-            <dt class="document-metadata__label"> Spisová značka: </dt> 
-            <dd class="document-metadata__value"> 53Cm 36/2001</dd> 
-          </dl> 
-        </li>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body-s"><a href="/court-case"><span class="govuk-visually-hidden">Přejít na rozsudek spisové značky </span>53 Cm 36/2001</a></td>
+          <td class="govuk-table__cell govuk-body-s">Městský soud v Praze</td>
+          <td class="govuk-table__cell govuk-body-s">Jan Novák</td>
+          <td class="govuk-table__cell govuk-body-s">9. července 2019</td>
+        </tr>
 
-        <li class="document"> 
-          <a href="/court-case" class="document__link">
-          Rozhodnutí ve věci XXX</a> 
-          <p>Návrh na vklad vlastnického práva do katastru nemovitostí podle smlouvy, kterou nemovitosti převádí do vlastnictví jiného osoba, která ke dni návrhu na vklad není v katastru zapsána jako vlastník převáděných nemovitostí, je třeba zamítnout pro nesplnění podmínky vkladu uvedené v § 5 odst. 1 písm. a zák. č. 265/1992 Sb., neboť navrhovanému vkladu je v takovém případě na překážku stav zápisů v katastru. Doloží-li nezapsaný převodce své oprávnění s nemovitostmi nakládat, je tím sice splněna podmínka vkladu uvedená v § 5 odst. 1 písm. e cit. zák., tj. oprávnění účastníka nakládat s předmětem právního úkonu, ale nikoli podmínka uvedená v § 5 odst. 1 písm. a cit. zák.</p> 
-          <dl class="document-metadata"> 
-            <dt class="document-metadata__label"> Rozhodl soud: </dt> 
-            <dd class="document-metadata__value"> Městský soud v Praze</dd> 
-            <dt class="document-metadata__label"> Datum rozhodnutí: </dt> 
-            <dd class="document-metadata__value"> 
-              <time datetime="2019-07-09">9. června 2019</time> 
-            </dd> 
-            <dt class="document-metadata__label"> Spisová značka: </dt> 
-            <dd class="document-metadata__value"> 53Cm 36/2001</dd> 
-          </dl> 
-        </li>
-      </ul>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body-s"><a href="/court-case"><span class="govuk-visually-hidden">Přejít na rozsudek spisové značky </span>53 Cm 36/2001</a></td>
+          <td class="govuk-table__cell govuk-body-s">Městský soud v Praze</td>
+          <td class="govuk-table__cell govuk-body-s">Jan Novák</td>
+          <td class="govuk-table__cell govuk-body-s">9. července 2019</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body-s"><a href="/court-case"><span class="govuk-visually-hidden">Přejít na rozsudek spisové značky </span>53 Cm 36/2001</a></td>
+          <td class="govuk-table__cell govuk-body-s">Městský soud v Praze</td>
+          <td class="govuk-table__cell govuk-body-s">Jan Novák</td>
+          <td class="govuk-table__cell govuk-body-s">9. července 2019</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body-s"><a href="/court-case"><span class="govuk-visually-hidden">Přejít na rozsudek spisové značky </span>53 Cm 36/2001</a></td>
+          <td class="govuk-table__cell govuk-body-s">Městský soud v Praze</td>
+          <td class="govuk-table__cell govuk-body-s">Jan Novák</td>
+          <td class="govuk-table__cell govuk-body-s">9. července 2019</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body-s"><a href="/court-case"><span class="govuk-visually-hidden">Přejít na rozsudek spisové značky </span>53 Cm 36/2001</a></td>
+          <td class="govuk-table__cell govuk-body-s">Městský soud v Praze</td>
+          <td class="govuk-table__cell govuk-body-s">Jan Novák</td>
+          <td class="govuk-table__cell govuk-body-s">9. července 2019</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body-s"><a href="/court-case"><span class="govuk-visually-hidden">Přejít na rozsudek spisové značky </span>53 Cm 36/2001</a></td>
+          <td class="govuk-table__cell govuk-body-s">Městský soud v Praze</td>
+          <td class="govuk-table__cell govuk-body-s">Jan Novák</td>
+          <td class="govuk-table__cell govuk-body-s">9. července 2019</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body-s"><a href="/court-case"><span class="govuk-visually-hidden">Přejít na rozsudek spisové značky </span>53 Cm 36/2001</a></td>
+          <td class="govuk-table__cell govuk-body-s">Městský soud v Praze</td>
+          <td class="govuk-table__cell govuk-body-s">Jan Novák</td>
+          <td class="govuk-table__cell govuk-body-s">9. července 2019</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body-s"><a href="/court-case"><span class="govuk-visually-hidden">Přejít na rozsudek spisové značky </span>53 Cm 36/2001</a></td>
+          <td class="govuk-table__cell govuk-body-s">Městský soud v Praze</td>
+          <td class="govuk-table__cell govuk-body-s">Jan Novák</td>
+          <td class="govuk-table__cell govuk-body-s">9. července 2019</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body-s"><a href="/court-case"><span class="govuk-visually-hidden">Přejít na rozsudek spisové značky </span>53 Cm 36/2001</a></td>
+          <td class="govuk-table__cell govuk-body-s">Městský soud v Praze</td>
+          <td class="govuk-table__cell govuk-body-s">Jan Novák</td>
+          <td class="govuk-table__cell govuk-body-s">9. července 2019</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body-s"><a href="/court-case"><span class="govuk-visually-hidden">Přejít na rozsudek spisové značky </span>53 Cm 36/2001</a></td>
+          <td class="govuk-table__cell govuk-body-s">Městský soud v Praze</td>
+          <td class="govuk-table__cell govuk-body-s">Jan Novák</td>
+          <td class="govuk-table__cell govuk-body-s">9. července 2019</td>
+        </tr>
+      </tbody>
+    </table>
+    <div aria-live="polite" role="status" aria-atomic="true" class="govuk-visually-hidden">Seřazeno podle Spisové značky (sestupně)</div>
+
+    <div class="app-back-to-top govuk-!-padding-bottom-3" data-module="app-back-to-top">
+      <a href="#top">
+        <svg class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+        </svg>Zpátky nahoru
+      </a>
     </div>
 
     <nav class="msp-pagination" id="pagination-label">
       <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Navigace stránkování</p>
       <ul class="msp-pagination__list">
           <li class="msp-pagination__item  msp-pagination__item--prev">
-              <a class="msp-pagination__link" href="">Předchozí<span class="govuk-visually-hidden"> sada stránek</span></a>
+              <a class="msp-pagination__link" href="">Předchozí<span class="govuk-visually-hidden"> stránka s rozhodnutími</span></a>
           </li>
           <li class="msp-pagination__item"><a class="msp-pagination__link" href="/page=1">1</a></li>
           <li class="msp-pagination__item msp-pagination__item--dots">...</li>
@@ -650,19 +577,12 @@
           <li class="msp-pagination__item msp-pagination__item--dots">...</li>
           <li class="msp-pagination__item"><a class="msp-pagination__link" href="/page=10">10</a></li>
           <li class="msp-pagination__item  msp-pagination__item--next">
-              <a class="msp-pagination__link" href="">Další<span class="govuk-visually-hidden"> sada stránek</span></a>
+              <a class="msp-pagination__link" href="">Další<span class="govuk-visually-hidden"> stránka s rozhodnutími</span></a>
           </li>
       </ul>
-      <p class="msp-pagination__results">Zobrazeno <b>10</b> až <b>20</b> ze <b>256</b> výsledků</p>
+      <p class="msp-pagination__results">Zobrazeno <b>30</b> až <b>45</b> ze <b>3000</b> rozhodnutí</p>
     </nav>
 
-    <div class="app-back-to-top" data-module="app-back-to-top">
-      <a href="#top">
-        <svg class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
-          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
-        </svg>Zpátky nahoru
-      </a>
-    </div>
   </div>
 </div> 
 
@@ -671,3 +591,6 @@
 {% block pageScripts %}
   {% include './script.html' %}
 {% endblock %}
+
+<script>window.GOVUKFrontend.initAll()</script>
+<script>new HMCTSFrontend.SortableTable({ table: $('table')[0] });</script>
