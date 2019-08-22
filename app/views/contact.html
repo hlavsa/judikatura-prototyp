@@ -1,0 +1,86 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  justice - judikatura prototyp
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    "tag": {
+      "text": "beta"
+    },
+    "html": "Toto je první verze nového vyhledávače rozhodnutí. <a href=\"/\">Co si o stránce myslíte?</a>"
+  }) }}
+
+  {{ govukBreadcrumbs({
+  "items": [
+    {
+      "text": "Domů",
+      "href": "/"
+    },
+    {
+      "text": "Kontakt a vysvětlivky"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <header class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      Kontakty a vysvětlení údajů v judikatuře
+    </h1>
+    <p class="govuk-body-l">SEM Perex. shrnutí. důležité sdílění</p>
+  </header>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l">Kontakty</h2>
+    <p>Pokud xxx, kontaktujte</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>bla</li>
+      <li>bla</li>
+    </ul>
+    <p>kontakt ve smyslu, na koho se obrátit, pokud potřebuju pomoc s vyplěním (filtrováním) a s pochopením služby obecně</p>
+    <p>kontakt na osobu, která mi dá rozhodnutí v jiný formě než je PDF (přístupnost)</p> 
+
+    <h2 class="govuk-heading-l">Význam údajů uváděných u jednotlivých rozhodnutí</h2>
+    <p>PŘEPSAT, ZJEDNODUŠIT</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Spisová značka je označení věci, ve které bylo rozhodnutí vydáno. Spisové značky jsou upraveny ve v.k.ř.</li>
+      <li>Právní věta je stručným shrnutím právního názoru, který soud v rozhodnutí zaujal. Veřejnosti jsou přístupné právní věty rozhodnutí schválených k publikaci na Internetu. </li>
+      <li>Soud</li>
+      <li>Datum rozhodnutí označuje den, kdy bylo rozhodnutí vydáno. Datum rozhodnutí je rovněž uvedeno v jeho písemném vyhotovení. </li>
+      <li>Heslo vymezuje právní otázku, které se rozhodnutí týká.</li>
+      <li>Kategorie rozhodnutí označuje význam (závažnost) otázky, kterou rozhodnutí řeší. </li>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>A – Významná rozhodnutí zásadní povahy navržená k uveřejnění ve Sbírce soudních rozhodnutí a stanovisek</li>
+        <li>B – Významná rozhodnutí hmotněprávní povahy z okruhu často řešené problematiky, která je možné využít jako nástroj pro tvorbu obdobných rozhodnutí</li>
+        <li>C - Významná rozhodnutí řešící pouze procesní problematiku</li>
+        <li>E – Veškerá pravomocná rozhodnutí soudů všech stupňů, v nichž je aplikováno některé z následujících nařízení ES, popřípadě v nichž soud rozhodl o neaplikovatelnosti těchto nařízení:</li>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>a)  nařízení Rady (ES) č. 44/2001 z 22.12.2000 o příslušnosti a uznávání a výkonu soudních rozhodnutí v občanských a obchodních věcech,</li>
+          <li>b)  nařízení Rady (ES) č. 2201/2003 z 27.11.2003 o příslušnosti a uznávání a výkonu rozhodnutí ve věcech manželských a ve věcech rodičovské zodpovědnosti a o zrušení nařízení (ES) č. 1347/2000,</li>
+          <li>c)  nařízení Rady (ES) č. 1346/2000 z 29.5.2000 o úpadkovém řízení,</li>
+          <li>d)  nařízení Evropského parlamentu a Rady (ES) č. 805/2004 z 21.4.2004, kterým se zavádí evropský exekuční titul pro nesporné nároky</li>
+        </ul>
+      </ul>
+      <li>Anonymizovaný text obsahuje text rozhodnutí soudu upravený tak, že jsou odstraněna jména a osobní údaje fyzických osob a další údaje, které zákon neumožňuje uveřejňovat nebo jejichž odstranění nařídil předseda senátu. Ze starších rozhodnutí byly při anonymizaci odstraněny i některé další údaje. Anonymizovaný text slouží pro seznámení se s rozhodovací praxí soudu.
+      </li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
+
+
+{% block bodyEnd %}
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
+{% endblock %}

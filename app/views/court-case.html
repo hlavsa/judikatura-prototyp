@@ -5,6 +5,13 @@
 {% endblock %}
 
 {% block beforeContent %}
+  {{ govukPhaseBanner({
+    "tag": {
+      "text": "beta"
+    },
+    "html": "Toto je první verze nového vyhledávače rozhodnutí. <a href=\"/\">Co si o stránce myslíte?</a>"
+  }) }}
+
   {% from "back-link/macro.njk" import govukBackLink %}
 
   {{ govukBackLink({
@@ -47,7 +54,7 @@
                 "text": "Soudce"
               },
               "value": {
-                "html": "Jan Novák <a href=\"path/to/rejc\" target=\"_blank\" class=\"govuk-!-padding-left-2 govuk-body-s\">Zobrazit informace o soudci</a>\n <span class=\"govuk-visually-hidden\"> otevře se v novém okně</span>\n"
+                "text": "Jan Novák"
               }
             },
             {
@@ -55,7 +62,7 @@
                 "text": "Soud"
               },
               "value": {
-                "html": "Krajský soud v Brně <a href=\"path/to/soud\" target=\"_blank\" class=\"govuk-!-padding-left-2 govuk-body-s\">Zobrazit informace o soudu</a>\n <span class=\"govuk-visually-hidden\"> otevře se v novém okně</span>\n"
+                "text": "Krajský soud v Brně"
               }
             },
             {
@@ -138,15 +145,31 @@
           Více k obsahu
         </h2>
         <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
+          <ul class="govuk-list govuk-!-font-size-16 govuk-!-padding-bottom-3">
             <li class="gem-c-related-navigation__link">
               <a class="govuk-link" href="#">Všechna rozhodnutí tohoto soudce</a>
             </li>
             <li class="gem-c-related-navigation__link">
               <a class="govuk-link" href="#">Všechna rozhodnutí tohoto soudu</a>
+            </li>
           </ul>
+        </nav>        
+      </aside>
+
+      <aside class="app-related-items" role="complementary">    
+        <h2 class="govuk-heading-s govuk-!-padding-top-3" id="subsection-title">   
+         Kontakty   
+        </h2>    
+        <nav role="navigation" aria-labelledby="subsection-title">   
+         <ul class="govuk-list govuk-!-font-size-16">   
+           <li class="gem-c-related-navigation__link">    
+             <a class="govuk-link" href="#">Kontakt na soud</a>   
+           </li>    
+           <li class="gem-c-related-navigation__link">    
+             <a class="govuk-link" href="#">Zobrazit profil soudce (rejč)</a>   
+           </li>
+         </ul>    
         </nav>
-        
       </aside>
     </div>
   </div>
